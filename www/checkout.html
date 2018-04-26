@@ -1,48 +1,26 @@
-  <ons-page>
-    <p class="intro">
-      This is a kitchen sink example that shows off the components of Onsen UI.<br><br>
-    </p>
-
-    <ons-card onclick="fn.pushPage({'id': 'pullHook.html', 'title': 'PullHook'})">
-      <div class="title">Pull Hook</div>
-      <div class="content">Simple "pull to refresh" functionality to update data.</div>
-    </ons-card>
-    <ons-card onclick="fn.pushPage({'id': 'dialogs.html', 'title': 'Dialogs'})">
-      <div class="title">Dialogs</div>
-      <div class="content">Components and utility methods to display many types of dialogs.</div>
-    </ons-card>
-    <ons-card onclick="fn.pushPage({'id': 'buttons.html', 'title': 'Buttons'})">
-      <div class="title">Buttons</div>
-      <div class="content">Different styles for buttons, floating action buttons and speed dials.</div>
-    </ons-card>
-    <ons-card onclick="fn.pushPage({'id': 'carousel.html', 'title': 'Carousel'})">
-      <div class="title">Carousel</div>
-      <div class="content">Customizable carousel that can be optionally fullscreen.</div>
-    </ons-card>
-    <ons-card onclick="fn.pushPage({'id': 'infiniteScroll.html', 'title': 'Infinite Scroll'})">
-      <div class="title">Infinite Scroll</div>
-      <div class="content">Two types of infinite lists: "Load More" and "Lazy Repeat".</div>
-    </ons-card>
-    <ons-card onclick="fn.pushPage({'id': 'progress.html', 'title': 'Progress'})">
-      <div class="title">Progress</div>
-      <div class="content">Linear progress, circular progress and spinners.</div>
-    </ons-card>
-
-    <style>
-      .intro {
-        text-align: center;
-        padding: 0 20px;
-        margin-top: 40px;
-      }
-
-      ons-card {
-        cursor: pointer;
-        color: #333;
-      }
-
-      .card__title,
-      .card--material__title {
-        font-size: 20px;
-      }
-    </style>
-  </ons-page>
+<ons-page>
+  <div>
+    <div id="dimensions"><video id="video" style="width:100%;" autoplay></video></div>
+    <canvas id="canvasMain" style="display: none;"></canvas>
+    <div id="picMain">
+      <ons-button id="snap" style="background: black">
+        <i class="fas fa-camera" style="font-size: 350%; margin-bottom: 4%; margin-top:5%; margin-right: 21%; margin-left: 5%; float: left;"> </i>
+        <h4 class="PicText" style="margin-top: 7%;">Take Picture</h4>
+      </ons-button>
+      <div style="background-color: black" id="pic-form">
+        <input type="file" name="file" id="file" class="inputfile" accept="image/*" capture="camera" style="display: none;" />
+        <label id="label" for="file" style="background: black; ">
+          <i class="fas fa-image" style="float: left; background-color: black; margin-top: 4%; margin-left: 4.5%; margin-bottom: 3%;" ></i>
+          <h4 style="font-size: 45%; padding: 6%; text-align: center;" >CHOOSE PICTURE</h4>
+        </label>
+      </div>
+    </div>
+    <div style="text-align: center;">
+      <ons-button id="submit-pic">
+        <span id="submit-text">Submit</span>
+        <span id="submit-load" style="display: none;"><ons-icon icon="ion-load-c" spin size="26px"></ons-icon></span>
+        <span id="submit-done" style="display: none;"><ons-icon icon="ion-checkmark-circled" size="26px"></ons-icon></span>
+      </ons-button>
+    </div>
+  </div>
+</ons-page>
