@@ -1,4 +1,4 @@
-(window.onload = function() {
+// (window.onload = function() {
   var config = {
     apiKey: "AIzaSyDTvUwyFOD-qb9trefu9jSL_ej-H4oqE5w",
     authDomain: "libraryapp-backend.firebaseapp.com",
@@ -52,4 +52,4 @@
   // //       });
   // //     }
 // });
-});
+// });

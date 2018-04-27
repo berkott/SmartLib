@@ -3,8 +3,10 @@ cordova.plugins.barcodeScanner.scan(
   function (result) {
     ons
     .notification.confirm({message: 'Please confirm that the ISBN '+result.text+' is the same as on the back of your book.'})
-    .then(function() {
-      confirmAlert(result.text);
+    .then(function(yes) {
+      if(yes){
+        confirmAlert(result.text);
+      }
     });
       
   },
@@ -29,7 +31,9 @@ cordova.plugins.barcodeScanner.scan(
 
 function enterISBN() {
   var isbn = document.getElementById('textISBN').value;
-  confirmAlert(isbn)
+  if (isbn){
+  confirmAlert(isbn);
+  }
   // confirmAlert(input)
   // ons.notification.prompt('Please enter the ISBN of the book you would like to checkout')
   //   .then(function(input) {
@@ -40,9 +44,10 @@ function enterISBN() {
 function confirmAlert(isbn){
   ons.notification.confirm('Do you wish to checkout the book with the ISBN of '+isbn+'.')
     .then(function(input) {
+      if (input){
       confirmCheckout(isbn);
+      }
     });
-
 }
 
 function confirmCheckout(isbn){
