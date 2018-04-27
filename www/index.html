@@ -60,6 +60,20 @@ window.fn.pushPage = function (page, anim) {
   </script>
 </head>
 <body>
+<!-- <ons-navigator id="appNavigator" swipeable swipe-target-width="80px">
+    <ons-page id="tabbarPage">
+        <ons-splitter id="appSplitter">
+            <ons-splitter-content page="login.html"></ons-splitter-content>
+        </ons-splitter>
+    </ons-page>
+</ons-navigator>
+
+<template id="login.html">
+    <ons-page id="login">
+        <div style="text-align: center; margin-top: 30px;" id="firebaseui-auth-container">
+        </div>
+    </ons-page>
+</template> -->
 <ons-navigator animation="fade" id="appNavigator" swipeable swipe-target-width="80px">
   <ons-page>
     <ons-splitter id="appSplitter">
@@ -68,6 +82,28 @@ window.fn.pushPage = function (page, anim) {
     </ons-splitter>
   </ons-page>
 </ons-navigator>
+
+<div class="page center" ng-controller="LoginController">
+    <div class="row">
+        <div class="col">
+            <ons-text-input placeholder="id" ng-model="id">             
+            </ons-text-input>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <input type="password" placeholder="password" ng-model="password" class="topcoat-text-input">
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col">
+            <ons-button ng-click="login(id, password)">
+                Login
+            </ons-button>
+        </div>
+    </div>
+</div>
 
 <template id="tabbar.html">
   <ons-page id="tabbar-page">

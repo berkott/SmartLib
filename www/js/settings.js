@@ -1,6 +1,6 @@
 var showPrompt = function() {
   var time = Date.now();
-  var ref = storageRef.child('BugReports/reports' + time + '.txt');
+  var ref = storageRef.child('BugReports/report' + time + '.txt');
   ons.notification.prompt('Please tell us about any bugs and we will fix them as soon as possible.')
     .then(function(input) {
       var message = input;

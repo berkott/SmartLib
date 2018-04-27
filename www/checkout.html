@@ -1,28 +1,46 @@
 <ons-page>
-  <hr> BarcodeReader DEMO <hr>
-  <input type="button" onClick ="scanBarcode()" value ="Scan" />
-  <!-- <div>
-    <div id="dimensions"><video id="video" style="width:100%;" autoplay></video></div>
-    <canvas id="canvasMain" style="display: none;"></canvas>
-    <div id="picMain">
-      <ons-button id="snap" style="background: black">
-        <i class="fas fa-camera" style="font-size: 350%; margin-bottom: 4%; margin-top:5%; margin-right: 21%; margin-left: 5%; float: left;"> </i>
-        <h4 class="PicText" style="margin-top: 7%;">Take Picture</h4>
-      </ons-button>
-      <div style="background-color: black" id="pic-form">
-        <input type="file" name="file" id="file" class="inputfile" accept="image/*" capture="camera" style="display: none;" />
-        <label id="label" for="file" style="background: black; ">
-          <i class="fas fa-image" style="float: left; background-color: black; margin-top: 4%; margin-left: 4.5%; margin-bottom: 3%;" ></i>
-          <h4 style="font-size: 45%; padding: 6%; text-align: center;" >CHOOSE PICTURE</h4>
-        </label>
+  <!-- <h2>Checkout</h2> -->
+  <ons-card>
+    <div class="title">Enter ISBN</div>
+    <div class="content">
+      <div style="text-align: center; margin-top: 30px;">
+        <p>
+          <ons-input id="textISBN" modifier="underbar" placeholder="ISBN" float></ons-input>
+        </p>
+        <p style="margin-top: 30px;">
+          <ons-button onclick="enterISBN()">checkout</ons-button>
+        </p>
       </div>
     </div>
-    <div style="text-align: center;">
-      <ons-button id="submit-pic">
-        <span id="submit-text">Submit</span>
-        <span id="submit-load" style="display: none;"><ons-icon icon="ion-load-c" spin size="26px"></ons-icon></span>
-        <span id="submit-done" style="display: none;"><ons-icon icon="ion-checkmark-circled" size="26px"></ons-icon></span>
-      </ons-button>
+  </ons-card>
+  
+  <ons-card>
+    <div class="title">Scan Barcode</div>
+    <div class="content" style="text-align:center">
+      <ons-button onclick="scanBarcode()">Scan book</ons-button>    
     </div>
-  </div> -->
+  </ons-card>
+
+  <!-- <ons-button modifier="large" class="button-margin" onclick="enterISBN()" style="margin-top: 10px">Enter ISBN</ons-button> -->
+  <ons-alert-dialog id="check">
+    <div class="alert-dialog-title">Check ISBN</div>
+    <div class="alert-dialog-content">
+      Please make sure that the ISBN that you have scanned is the same as that of the book.
+    </div>
+    <div class="alert-dialog-footer">
+      <ons-alert-dialog-button>Rescan</ons-alert-dialog-button>
+      <ons-alert-dialog-button>OK</ons-alert-dialog-button>
+    </div>
+  </ons-alert-dialog>
+
+  <ons-alert-dialog id="confirm">
+    <div class="alert-dialog-title">Confirm</div>
+    <div class="alert-dialog-content">
+      Do you wish to checkout this book?
+    </div>
+    <div class="alert-dialog-footer">
+      <ons-alert-dialog-button>Cancel</ons-alert-dialog-button>
+      <ons-alert-dialog-button onclick="confirmCheckout()">Confirm</ons-alert-dialog-button>
+    </div>
+  </ons-alert-dialog>
 </ons-page>

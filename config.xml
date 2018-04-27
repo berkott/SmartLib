@@ -89,7 +89,7 @@
   <preference name="WindowsStoreIdentityName" value="ae1a8d23-3711-3719-40c4-0aef3a9b95f6"/>
   <preference name="KeepRunning" value="true"/>
   <preference name="monaca:AndroidIsPackageNameSeparate" value="false"/>
-  <preference name="Orientation" value="all"/>
+  <preference name="Orientation" value="portrait"/> <!--  [behind=3, fullSensor=10, fullUser=13, landscape=0, locked=14, nosensor=5, portrait=1, reverseLandscape=8, reversePortrait=9, sensor=4, sensorLandscape=6, sensorPortrait=7, unspecified=4294967295, user=2, userLandscape=11, userPortrait=12]. -->
   <preference name="SplashScreenDelay" value="1000"/>
   <preference name="Fullscreen" value="false"/>
   <preference name="ios-XCBuildConfiguration-TARGETED_DEVICE_FAMILY" value="1,2"/>
