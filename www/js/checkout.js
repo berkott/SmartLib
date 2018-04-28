@@ -8,7 +8,7 @@ cordova.plugins.barcodeScanner.scan(
         confirmAlert(result.text);
       }
     });
-      
+
   },
   function (error) {
       alert("Scanning failed: " + error);
@@ -42,7 +42,7 @@ function enterISBN() {
 }
 
 function confirmAlert(isbn){
-  ons.notification.confirm('Do you wish to checkout the book with the ISBN of '+isbn+'.')
+  ons.notification.confirm('Do you wish to checkout the book with the ISBN of '+isbn+'?')
     .then(function(input) {
       if (input){
       confirmCheckout(isbn);
@@ -71,4 +71,3 @@ function unsuccessful() {
     timeout: 2000
   });
 }
-

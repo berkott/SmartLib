@@ -3,10 +3,14 @@
     "cordova_version": "7.1",
     "xcode_version": "9",
     "title-ja": "",
-    "title-en": "",
+    "title-en": "asdf",
     "description-ja": "",
-    "description-en": "",
+    "description-en": "asdf",
     "category": "User Template",
-    "platform": [],
-    "name": "generated-1524928062-5ae1400ae78885e7348b4567"
+    "platform": [
+        "android",
+        "ios",
+        "winrt"
+    ],
+    "name": "generated-1524934132-5ae1400ae78885e7348b4567"
 }
