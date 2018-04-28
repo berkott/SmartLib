@@ -1,10 +1,12 @@
-window.onload = function() {
+// console.log("works");
+// window.onload = function() {
+//   console.log("works");
   getCheckedOut();
   getReserved();
   getEvents();
   getTrending();
   getLibraryPicks();
-}
+// }
 
 function getCheckedOut() {
 
@@ -47,7 +49,7 @@ function getLibraryPicks() {
   firebase.database().ref('list').once('value', function(snapshot) {
     snapshot.forEach(function(childSnapshot) {
       var title = childSnapshot.val().title;
-      var author = childSnapshot.val().author;
+      var author = childSnapshot.val().author || "None";
       var libStatus = childSnapshot.val().libPick || "no";
       if (libStatus === "yes") {
         $('#libraryPicks').append("<div id='Library Picks" + i + "'><img id='libPickBookPic" + i + "' style='width:20%; height:35%; text-align: left;'><div style='width:70%; float:right;'><div style='margin-bottom:6%'>Title: " + title + "</div><div>Author: " + author + "</div><ons-button modifier='quiet' class='button-margin' onclick='bookButton(" + i + ")'>View</ons-button></div><hr align='center' width='80%'></div>");
@@ -66,6 +68,11 @@ function addImage(type, i) {
   var storageRef = storage.ref();
   storageRef.child('/BookCovers/' + i + '.jpg').getDownloadURL().then(function(url) {
     var img = document.getElementById(type + 'BookPic' + i);
+    console.log(url);
     img.src = url;
+  },
+  function(error){
+    var img = document.getElementById(type + 'BookPic' + i);
+    img.src = "images/noImage.png";
   });
 }
