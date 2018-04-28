@@ -3,7 +3,7 @@
   <name>SmartLib</name>
   <description>Made with Monaca (http://monaca.mobi)</description>
   <author/>
-  <content src="index.html"/>
+  <content src="login.html"/>
   <allow-navigation href="*"/>
   <allow-intent href="itms:*"/>
   <allow-intent href="itms-apps:*"/>
@@ -99,5 +99,5 @@
   <access origin="*"/>
   <preference name="DisallowOverscroll" value="true"/>
   <preference name="EnableViewportScale" value="false"/>
-  
+
 </widget>
