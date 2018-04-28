@@ -9,6 +9,9 @@
   };
   firebase.initializeApp(config);
 
+  var database = firebase.database();
+  var storage = firebase.storage();
+
   // var storage = firebase.storage();
   // var storageRef = storage.ref();
   // var imagesRef = storageRef.child('map.jpg');

@@ -1,5 +1,3 @@
-// This is a JavaScript file
-(window.onload = function() {
   var config = {
     apiKey: "AIzaSyDTvUwyFOD-qb9trefu9jSL_ej-H4oqE5w",
     authDomain: "libraryapp-backend.firebaseapp.com",
@@ -28,7 +26,7 @@
   firebase.auth().onAuthStateChanged(function(user) {
       if (user) document.getElementById('appNavigator').pushPage('tabbar.html');
   });
-      
+
   const txtEmail = document.getElementById('txtEmail');
   const txtPassword = document.getElementById('txtPassword')
   const btnLogin = document.getElementsByClassName('login-button')
@@ -135,6 +133,3 @@
     	console.log(yea);
     });
   }
-
-
-});
