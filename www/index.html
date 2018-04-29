@@ -78,20 +78,7 @@
 </head>
 
 <body>
-  <!-- <ons-navigator id="appNavigator" swipeable swipe-target-width="80px">
-    <ons-page id="tabbarPage">
-        <ons-splitter id="appSplitter">
-            <ons-splitter-content page="login.html"></ons-splitter-content>
-        </ons-splitter>
-    </ons-page>
-</ons-navigator>
 
-<template id="login.html">
-    <ons-page id="login">
-        <div style="text-align: center; margin-top: 30px;" id="firebaseui-auth-container">
-        </div>
-    </ons-page>
-</template> -->
   <ons-navigator animation="fade" id="appNavigator" swipeable swipe-target-width="80px">
     <ons-page>
       <ons-splitter id="appSplitter">
@@ -102,32 +89,14 @@
     </ons-page>
   </ons-navigator>
 
-  <!-- <div class="page center" ng-controller="LoginController">
-    <div class="row">
-      <div class="col">
-        <ons-text-input placeholder="id" ng-model="id">
-        </ons-text-input>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col">
-        <input type="password" placeholder="password" ng-model="password" class="topcoat-text-input">
-      </div>
-    </div> -->
-<template id="login.html">
+  <template id="login.html">
     <ons-page id="login">
       <img src="images/SmartLibLogoBlack.png" style="padding-top: 25px; padding-bottom: 25px; width: 80%; display: block; margin-left: auto; margin-right: auto;"></img>
       <div style="text-align: center; margin-top: 30px;" id="firebaseui-auth-container"></div>
     </ons-page>
-</template>
-    <!-- <div class="row">
-      <div class="col">
-        <ons-button ng-click="login(id, password)">
-          Login
-        </ons-button>
-      </div>
-    </div>
-  </div> -->
+  </template>
+
+
 
   <template id="tabbar.html">
   <ons-page id="tabbar-page">
@@ -152,7 +121,11 @@
       <ons-tab label="Checkout" icon="md-camera" page="checkout.html"></ons-tab>
       <ons-tab label="Map" icon="md-map" page="map.html"></ons-tab>
     </ons-tabbar>
-
+    <!-- <ons-splitter id="appSplitter2"> -->
+      <!-- <ons-splitter-content page="login.html"></ons-splitter-content> -->
+      <!-- <ons-splitter-side id="sidemenu" page="settings.html" swipeable side="right" collapse="" width="260px"></ons-splitter-side> -->
+      <!-- <ons-splitter-content page="tabbar.html"></ons-splitter-content> -->
+    <!-- </ons-splitter> -->
     <script>
       ons.getScriptPage().addEventListener('prechange', function(event) {
         if (event.target.matches('#appTabbar')) {
