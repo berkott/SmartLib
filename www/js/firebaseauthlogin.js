@@ -14,7 +14,7 @@
   firebase.auth().onAuthStateChanged(function(user) {
       if (user) {
         console.log("works");
-        document.getElementById('appNavigator').pushPage('tabbar.html', {
+        document.getElementById('appNavigator').pushPage('pageWithSlider.html', {
           data: {
             title: 'MyLib'
           }
