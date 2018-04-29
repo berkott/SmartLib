@@ -19,13 +19,13 @@ function getUiConfig() {
     'signInFlow': 'popup',
     'signInOptions': [
       // TODO(developer): Remove the providers you don't need for your app.
-      // {
-      //   provider: firebase.auth.GoogleAuthProvider.PROVIDER_ID,
-      //   // Required to enable this provider in One-Tap Sign-up.
-      //   authMethod: 'https://accounts.google.com',
-      //   // Required to enable ID token credentials for this provider.
-      //   clientId: CLIENT_ID
-      // },
+      {
+        provider: firebase.auth.GoogleAuthProvider.PROVIDER_ID,
+        // Required to enable this provider in One-Tap Sign-up.
+        authMethod: 'https://accounts.google.com',
+        // Required to enable ID token credentials for this provider.
+        clientId: CLIENT_ID
+      },
       // {
       //   provider: firebase.auth.FacebookAuthProvider.PROVIDER_ID,
       //   scopes :[
@@ -40,7 +40,7 @@ function getUiConfig() {
       {
         provider: firebase.auth.EmailAuthProvider.PROVIDER_ID,
         // Whether the display name should be displayed in Sign Up page.
-        requireDisplayName: true
+        requireDisplayName: false
       }
       // {
       //   provider: firebase.auth.PhoneAuthProvider.PROVIDER_ID,
@@ -66,17 +66,17 @@ ui.disableAutoSignIn();
 /**
  * @return {string} The URL of the FirebaseUI standalone widget.
  */
-function getWidgetUrl() {
-  return '/widget#recaptcha=' + getRecaptchaMode();
-}
+// function getWidgetUrl() {
+//   return '/widget#recaptcha=' + getRecaptchaMode();
+// }
 
 
 /**
  * Redirects to the FirebaseUI widget.
  */
-var signInWithRedirect = function() {
-  window.location.assign(getWidgetUrl());
-};
+// var signInWithRedirect = function() {
+//   window.location.assign(getWidgetUrl());
+// };
 
 
 /**
@@ -88,7 +88,10 @@ var handleSignedInUser = function(user) {
   document.getElementById('user-signed-out').style.display = 'none';
   document.getElementById('name').textContent = user.displayName;
   document.getElementById('email').textContent = user.email;
-  document.getElementById('phone').textContent = user.phoneNumber;
+  ons.notification.toast('Logged In!', {
+            timeout: 2000
+  });
+
   if (user.photoURL){
     var photoURL = user.photoURL;
     // Append size to the photo URL for Google hosted images to avoid requesting
@@ -121,40 +124,41 @@ var handleSignedOutUser = function() {
 firebase.auth().onAuthStateChanged(function(user) {
   document.getElementById('loading').style.display = 'none';
   document.getElementById('loaded').style.display = 'block';
+  
   user ? handleSignedInUser(user) : handleSignedOutUser();
 });
 
 /**
  * Deletes the user's account.
  */
-var deleteAccount = function() {
-  firebase.auth().currentUser.delete().catch(function(error) {
-    if (error.code == 'auth/requires-recent-login') {
-      // The user's credential is too old. She needs to sign in again.
-      firebase.auth().signOut().then(function() {
-        // The timeout allows the message to be displayed after the UI has
-        // changed to the signed out state.
-        setTimeout(function() {
-          alert('Please sign in again to delete your account.');
-        }, 1);
-      });
-    }
-  });
-};
+// var deleteAccount = function() {
+//   firebase.auth().currentUser.delete().catch(function(error) {
+//     if (error.code == 'auth/requires-recent-login') {
+//       // The user's credential is too old. She needs to sign in again.
+//       firebase.auth().signOut().then(function() {
+//         // The timeout allows the message to be displayed after the UI has
+//         // changed to the signed out state.
+//         setTimeout(function() {
+//           alert('Please sign in again to delete your account.');
+//         }, 1);
+//       });
+//     }
+//   });
+// };
 
 
 /**
  * Handles when the user changes the reCAPTCHA config.
  */
-function handleRecaptchaConfigChange() {
-  var newRecaptchaValue = document.querySelector(
-      'input[name="recaptcha"]:checked').value;
-  location.replace(location.pathname + '#recaptcha=' + newRecaptchaValue);
+// function handleRecaptchaConfigChange() {
+//   // var newRecaptchaValue = document.querySelector(
+//   //     'input[name="recaptcha"]:checked').value;
+//   // location.replace(location.pathname + '#recaptcha=' + newRecaptchaValue);
 
-  // Reset the inline widget so the config changes are reflected.
-  ui.reset();
-  ui.start('#firebaseui-container', getUiConfig());
-}
+//   // Reset the inline widget so the config changes are reflected.
+//   ui.reset();
+//   ui.start('#firebaseui-container', getUiConfig());
+// }
 
 
 /**
@@ -163,14 +167,14 @@ function handleRecaptchaConfigChange() {
 var initApp = function() {
   // document.getElementById('sign-in-with-redirect').addEventListener(
   //     'click', signInWithRedirect);
-  signInWithRedirect();
+  // signInWithRedirect();
   document.getElementById('sign-out').addEventListener('click', function() {
     firebase.auth().signOut();
   });
-  document.getElementById('delete-account').addEventListener(
-      'click', function() {
-        deleteAccount();
-      });
+  // document.getElementById('delete-account').addEventListener(
+  //     'click', function() {
+  //       deleteAccount();
+  //     });
 
   // document.getElementById('recaptcha-normal').addEventListener(
   //     'change', handleRecaptchaConfigChange);

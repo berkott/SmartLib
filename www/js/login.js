@@ -1,4 +1,3 @@
-
 ons.bootstrap()
 
 .controller('DialogController', function($scope) {

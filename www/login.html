@@ -9,7 +9,6 @@
     <!-- <script src="dist/firebaseui.js"></script> -->
     <script src="https://cdn.firebase.com/libs/firebaseui/2.7.0/firebaseui.js"></script>
     <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/2.7.0/firebaseui.css" />
-    <link type="text/css" rel="stylesheet" href="dist/firebaseui.css" />
     <style>
     ons-dialog:not([modifier='material']) p {
         margin-left: 10px;
@@ -28,27 +27,18 @@
 </head>
 
 <body>
-    <ons-page>
-        <ons-toolbar>
-            <div class="center">SmartLib</div>
-        </ons-toolbar>
-        <ons-list ng-controller="DialogController">
-            <ons-list-item ng-click="show('login.html')" modifier="tappable">
-                Login with Email
-            </ons-list-item>
-        </ons-list>
-    </ons-page>
     <ons-template id="login.html">
-        <ons-dialog var="dialog" cancelable>
-            <ons-toolbar inline>
-                <div class="center">
-                    Login
-                </div>
-            </ons-toolbar>
-            <div id="loading">Loading...</div>
+        <ons-page style="background-color: #2996DD; height:100%;">
+            <div class="background"></div>
+            <img src="images/SmartLibLogo.png" style="padding-top: 25px; padding-bottom: 25px; width: 80%; display: block; margin-left: auto; margin-right: auto;"></img>
+            <div id="loading" align="center">
+              <p style="font-size:20px;">
+                Loading...
+              </p>
+            </div>
             <div id="loaded" class="hidden">
                 <div id="main">
-                    <div id="user-signed-in" class="hidden">
+                    <div id="user-signed-in" class="hidden" align="center">
                         <div id="user-info">
                             <div id="photo-container">
                                 <img id="photo">
@@ -58,10 +48,10 @@
                             <div id="is-new-user"></div>
                             <div class="clearfix"></div>
                         </div>
-                        <p>
+                        <!-- <p>
                             <ons-button id="sign-out">Sign Out</ons-button>
                             <ons-button id="delete-account">Delete account</ons-button>
-                        </p>
+                        </p> -->
                     </div>
                     <div id="user-signed-out" class="hidden">
                         <!-- <h4 align="center">Please Login</h4> -->
@@ -79,8 +69,7 @@
                             <button id="sign-in-with-redirect">Sign In with Redirect</button>
                             <button id="sign-in-with-popup">Sign In with Popup</button>
                         </p> -->
-                        <div id="firebaseui-spa">
-                            <!-- <h5>Single Page Application mode:</h5> -->
+                        <div id="firebaseui-spa" style="padding-right: 40px; padding-left: 40px">
                             <div id="firebaseui-container"></div>
                         </div>
                     </div>
@@ -95,57 +84,12 @@
             <p>
                 <ons-button modifier="large" ng-click="dialog.hide()">Sign in</ons-button>
             </p> -->
-        </ons-dialog>
+        </ons-page>
     </ons-template>
 
-    <script src='https://cdn.rawgit.com/OnsenUI/OnsenUI/2.0.0-alpha.15/build/js/onsenui.js'></script>
-    <script src='http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.14/angular.min.js'></script>
-    <script src='https://cdn.rawgit.com/OnsenUI/OnsenUI/2.0.0-alpha.15/build/js/angular-onsenui.js'></script>
-    <script src="js/login.js"></script>
+    <!-- <script src="js/login.js"></script> -->
     <script src="js/firebaseauthlogin.js"></script>
 
 </body>
 
 </html>
-
-<!-- <!doctype html>
-<html>
-
-<head>
-  <meta charset="utf-8">
-
-  <link rel="stylesheet" href="lib/onsen/css/onsenui.css">
-  <link rel="stylesheet" href="../onsen-css-components-blue-basic-theme.css">
-  <link rel="stylesheet" href="css/login.css" onload="console.log(" Styles loaded ")">
-  <script src="https://www.gstatic.com/firebasejs/4.13.0/firebase.js"></script>
-
-  <script src="js/firebase.js"></script>
-  <script src="js/login.js"></script>
-  <script src="lib/onsen/js/onsenui.js"></script>
-
-</head>
-
-<body>
-  <div id="firebaseui-auth-container"></div>
-  <div id="loader">Loading...</div>
-  <!-- <ons-page>
-      <ons-toolbar>
-        <div class="center">Log In</div>
-        <div class="right"><ons-toolbar-button>Close</ons-toolbar-button></div>
-      </ons-toolbar>
-
-      <div class="login-form">
-
-        <input id="txtEmail" type="email" class="text-input--underbar" placeholder="Email" value="">
-        <input id="txtPassword" type="password" class="text-input--underbar" placeholder="Password" value="">
-        <br><br>
-        <ons-button modifier="large" class="login-button">Log In</ons-button>
-        <br><br>
-        <ons-button modifier="quiet" class="forgot-password">Forgot password?</ons-button>
-      </div>
-
-    </ons-page> -->
-
-<!-- </body>
-
-</html> -->

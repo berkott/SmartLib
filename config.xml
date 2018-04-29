@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <widget xmlns="http://www.w3.org/ns/widgets" id="com.FBLA.SmartLib" version="1.0.0">
   <name>SmartLib</name>
-  <description>Made with Monaca (http://monaca.mobi)</description>
+  <description>FBLA Mobile App Development - Berkan and Shiv</description>
   <author/>
   <content src="login.html"/>
 

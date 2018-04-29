@@ -15,3 +15,19 @@ var showPrompt = function() {
       }
     });
 };
+
+var logOut = function() {
+  var fb = firebase.auth();
+  firebase.auth().signOut().then(function() {
+    ons.notification.toast('Logged Out!', {
+            timeout: 2000
+    });
+    console.log('Signed Out');
+    
+  }, function(error) {
+    ons.notification.toast('Logout Error', error, {
+            timeout: 2000
+    });
+    console.error('Sign Out Error', error);
+  });
+}
