@@ -1,5 +1,6 @@
 <!DOCTYPE HTML>
 <html>
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -14,6 +15,7 @@
   <script src="js/checkout.js"></script>
   <script src="js/myLib.js"></script>
   <script src="js/catalog.js"></script>
+  <script src="js/book.js"></script>
 
   <link rel="stylesheet" href="components/loader.css">
   <link rel="stylesheet" href="lib/onsenui/css/onsenui.css">
@@ -38,30 +40,40 @@
 
     window.fn = {};
 
-window.fn.toggleMenu = function () {
-  document.getElementById('appSplitter').right.toggle();
-};
+    window.fn.toggleMenu = function() {
+      document.getElementById('appSplitter').right.toggle();
+    };
 
-window.fn.loadView = function (index) {
-  document.getElementById('appTabbar').setActiveTab(index);
-  document.getElementById('sidemenu').close();
-};
+    window.fn.loadView = function(index) {
+      document.getElementById('appTabbar').setActiveTab(index);
+      document.getElementById('sidemenu').close();
+    };
 
-window.fn.loadLink = function (url) {
-  window.open(url, '_blank');
-};
+    window.fn.loadLink = function(url) {
+      window.open(url, '_blank');
+    };
 
-window.fn.pushPage = function (page, anim) {
-  if (anim) {
-    document.getElementById('appNavigator').pushPage(page.id, { data: { title: page.title }, animation: anim });
-  } else {
-    document.getElementById('appNavigator').pushPage(page.id, { data: { title: page.title } });
-  }
-};
+    window.fn.pushPage = function(page, anim) {
+      if (anim) {
+        document.getElementById('appNavigator').pushPage(page.id, {
+          data: {
+            title: page.title
+          },
+          animation: anim
+        });
+      } else {
+        document.getElementById('appNavigator').pushPage(page.id, {
+          data: {
+            title: page.title
+          }
+        });
+      }
+    };
   </script>
 </head>
+
 <body>
-<!-- <ons-navigator id="appNavigator" swipeable swipe-target-width="80px">
+  <!-- <ons-navigator id="appNavigator" swipeable swipe-target-width="80px">
     <ons-page id="tabbarPage">
         <ons-splitter id="appSplitter">
             <ons-splitter-content page="login.html"></ons-splitter-content>
@@ -75,38 +87,38 @@ window.fn.pushPage = function (page, anim) {
         </div>
     </ons-page>
 </template> -->
-<ons-navigator animation="fade" id="appNavigator" swipeable swipe-target-width="80px">
-  <ons-page>
-    <ons-splitter id="appSplitter">
-      <ons-splitter-side id="sidemenu" page="settings.html" swipeable side="right" collapse="" width="260px"></ons-splitter-side>
-      <ons-splitter-content page="tabbar.html"></ons-splitter-content>
-    </ons-splitter>
-  </ons-page>
-</ons-navigator>
+  <ons-navigator animation="fade" id="appNavigator" swipeable swipe-target-width="80px">
+    <ons-page>
+      <ons-splitter id="appSplitter">
+        <ons-splitter-side id="sidemenu" page="settings.html" swipeable side="right" collapse="" width="260px"></ons-splitter-side>
+        <ons-splitter-content page="tabbar.html"></ons-splitter-content>
+      </ons-splitter>
+    </ons-page>
+  </ons-navigator>
 
-<div class="page center" ng-controller="LoginController">
+  <div class="page center" ng-controller="LoginController">
     <div class="row">
-        <div class="col">
-            <ons-text-input placeholder="id" ng-model="id">
-            </ons-text-input>
-        </div>
+      <div class="col">
+        <ons-text-input placeholder="id" ng-model="id">
+        </ons-text-input>
+      </div>
     </div>
     <div class="row">
-        <div class="col">
-            <input type="password" placeholder="password" ng-model="password" class="topcoat-text-input">
-        </div>
+      <div class="col">
+        <input type="password" placeholder="password" ng-model="password" class="topcoat-text-input">
+      </div>
     </div>
 
     <div class="row">
-        <div class="col">
-            <ons-button ng-click="login(id, password)">
-                Login
-            </ons-button>
-        </div>
+      <div class="col">
+        <ons-button ng-click="login(id, password)">
+          Login
+        </ons-button>
+      </div>
     </div>
-</div>
+  </div>
 
-<template id="tabbar.html">
+  <template id="tabbar.html">
   <ons-page id="tabbar-page">
     <ons-toolbar>
       <div class="left" style="margin-left: 5px;">MyLib</div>
@@ -140,7 +152,7 @@ window.fn.pushPage = function (page, anim) {
   </ons-page>
 </template>
 
-<template id="pullHook.html">
+  <template id="pullHook.html">
   <ons-page>
     <ons-toolbar>
       <div class="left">
@@ -237,7 +249,7 @@ window.fn.pushPage = function (page, anim) {
   </ons-page>
 </template>
 
-<template id="dialogs.html">
+  <template id="dialogs.html">
   <ons-page id="dialogs-page">
     <ons-toolbar>
       <div class="left">
@@ -433,7 +445,7 @@ window.fn.pushPage = function (page, anim) {
   </ons-page>
 </template>
 
-<template id="buttons.html">
+  <template id="buttons.html">
   <ons-page>
     <ons-toolbar>
       <div class="left">
@@ -497,7 +509,7 @@ window.fn.pushPage = function (page, anim) {
   </ons-page>
 </template>
 
-<template id="carousel.html">
+  <template id="carousel.html">
   <ons-page>
     <ons-toolbar>
       <div class="left">
@@ -584,7 +596,7 @@ window.fn.pushPage = function (page, anim) {
   </ons-page>
 </template>
 
-<template id="loadMore.html">
+  <template id="loadMore.html">
   <!-- Load more items on scroll bottom -->
   <ons-page id="load-more-page" on-infinite-scroll="fn.loadMore">
     <p class="intro">
@@ -627,7 +639,7 @@ window.fn.pushPage = function (page, anim) {
   </ons-page>
 </template>
 
-<template id="lazyRepeat.html">
+  <template id="lazyRepeat.html">
   <!-- Lazy load thousands of items -->
   <ons-page id="lazy-repeat-page">
     <p class="intro">
@@ -665,7 +677,7 @@ window.fn.pushPage = function (page, anim) {
   </ons-page>
 </template>
 
-<template id="infiniteScroll.html">
+  <template id="infiniteScroll.html">
   <ons-page>
     <ons-toolbar>
       <div class="left">
@@ -687,7 +699,7 @@ window.fn.pushPage = function (page, anim) {
   </ons-page>
 </template>
 
-<template id="progress.html">
+  <template id="progress.html">
   <ons-page>
     <ons-toolbar>
       <div class="left">
@@ -799,7 +811,7 @@ window.fn.pushPage = function (page, anim) {
   </ons-page>
 </template>
 
-<template id="transition.html">
+  <template id="transition.html">
   <ons-page>
     <ons-toolbar>
       <div class="left">
@@ -818,11 +830,12 @@ window.fn.pushPage = function (page, anim) {
   </ons-page>
 </template>
 
-<style>
-  ons-splitter-side[animation=overlay] {
-    border-left: 1px solid #bbb;
-  }
-</style>
+  <style>
+    ons-splitter-side[animation=overlay] {
+      border-left: 1px solid #bbb;
+    }
+  </style>
 </body>
+
 </html>
 0

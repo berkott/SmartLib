@@ -60,10 +60,6 @@ function getLibraryPicks() {
   });
 }
 
-function bookButton(i) {
-  console.log("book button pressed");
-}
-
 function addImage(type, i) {
   var storageRef = storage.ref();
   storageRef.child('/BookCovers/' + i + '.jpg').getDownloadURL().then(function(url) {
