@@ -11,8 +11,7 @@ function loadLibData(){
 
 function getCheckedOut() {
   var i = 0;
-  // var userId = firebase.auth().currentUser.uid || "joe";
-  var userId = "joe";
+  var userId = firebase.auth().currentUser.uid;
   firebase.database().ref('list').once('value', function(snapshot) {
     snapshot.forEach(function(childSnapshot) {
       var title = childSnapshot.val().title;
@@ -36,14 +35,12 @@ function getCheckedOut() {
 
 function getReserved() {
   var i = 0;
-  // var userId = firebase.auth().currentUser.uid || "joe";
-  var userId = "joe";
+  var userId = firebase.auth().currentUser.uid;
   firebase.database().ref('list').once('value', function(snapshot) {
     snapshot.forEach(function(childSnapshot) {
       var title = childSnapshot.val().title;
       var reservedBy = childSnapshot.val().reserve.reservedBy;
       var date = childSnapshot.val().reserve.date;
-      console.log(date);
       date = Date.parse(date);
       var dateDue = date + 14*86400000;
       var currentTime = Date.now();
