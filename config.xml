@@ -3,10 +3,10 @@
   <name>SmartLib</name>
   <description>FBLA Mobile App Development - Berkan and Shiv</description>
   <author/>
-  <content src="login.html"/>
+  <!-- <content src="login.html"/> -->
 
   <!-- Temporary - delete and replace with line above later -->
-  <!-- <content src="index.html"/> -->
+  <content src="index.html"/>
 
   <allow-navigation href="*"/>
   <allow-intent href="itms:*"/>

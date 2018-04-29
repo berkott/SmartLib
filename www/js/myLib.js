@@ -9,11 +9,51 @@
 // }
 
 function getCheckedOut() {
-
+  var i = 0;
+  // var userId = firebase.auth().currentUser.uid || "joe";
+  var userId = "joe";
+  firebase.database().ref('list').once('value', function(snapshot) {
+    snapshot.forEach(function(childSnapshot) {
+      var title = childSnapshot.val().title;
+      var checkedoutBy = childSnapshot.val().checkout.checkedoutBy;
+      var date = childSnapshot.val().checkout.date;
+      console.log(date);
+      date = Date.parse(date);
+      var dateDue = date + 15*86400000;
+      var currentTime = Date.now();
+      var timeLeft = dateDue - currentTime;
+      var daysLeft = Math.round(timeLeft/86400000);
+      if (checkedoutBy === userId) {
+        $('#checkedOutContent').append("<div id='checkedOutContent" + i + "'><img id='checkoutBookPic" + i + "' style='width:20%; height:35%; text-align: left;'><div style='width:70%; float:right;'><div style='margin-bottom:6%'>Title: " + title + "</div><div>Days Left: " + daysLeft + "</div><ons-button modifier='quiet' class='button-margin' onclick='bookButton(" + i + ")'>View</ons-button></div><hr align='center' width='80%'></div>");
+        addImage("checkout", i);
+      }
+      i++;
+    });
+  });
 }
 
 function getReserved() {
-
+  var i = 0;
+  // var userId = firebase.auth().currentUser.uid || "joe";
+  var userId = "joe";
+  firebase.database().ref('list').once('value', function(snapshot) {
+    snapshot.forEach(function(childSnapshot) {
+      var title = childSnapshot.val().title;
+      var reservedBy = childSnapshot.val().reserve.reservedBy;
+      var date = childSnapshot.val().reserve.date;
+      console.log(date);
+      date = Date.parse(date);
+      var dateDue = date + 14*86400000;
+      var currentTime = Date.now();
+      var timeLeft = dateDue - currentTime;
+      var daysLeft = Math.round(timeLeft/86400000);
+      if (reservedBy === userId) {
+        $('#reservedContent').append("<div id='reservedContent" + i + "'><img id='reservedBookPic" + i + "' style='width:20%; height:35%; text-align: left;'><div style='width:70%; float:right;'><div style='margin-bottom:6%'>Title: " + title + "</div><div>Days Left: " + daysLeft + "</div><ons-button modifier='quiet' class='button-margin' onclick='bookButton(" + i + ")'>View</ons-button></div><hr align='center' width='80%'></div>");
+        addImage("reserved", i);
+      }
+      i++;
+    });
+  });
 }
 
 function getEvents() {
