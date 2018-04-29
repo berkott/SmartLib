@@ -28,22 +28,26 @@ function reserveBook(i) {
   // var userId = firebase.auth().currentUser.uid || "joe";
   var userId = "joe";
   var value = new Date();
-  var date = value.getMonth()+1 + "/" + value.getDate() + "/" + value.getFullYear();
+  var date = value.getMonth() + 1 + "/" + value.getDate() + "/" + value.getFullYear();
   firebase.database().ref('list/' + i + '/reserve').once('value', function(snapshot) {
     if (snapshot.val().reservedBy === "none") {
       ons.notification.confirm('Do you wish to reserve this book?')
         .then(function(input) {
-          if (input){
+          if (input) {
             firebase.database().ref('list/' + i + '/reserve').set({
-               reservedBy: userId,
-               date: date
-             }).then(function(){
-               ons.notification.alert('You have reserved your book until 2 weeks from today');
-             });
+              reservedBy: userId,
+              date: date
+            }).then(function() {
+              ons.notification.alert('You have reserved your book until 2 weeks from today');
+            });
           }
         });
     } else {
-      ons.notification.alert('You cannot reserve this book because someone else has already reserved it.');
+      if (userId === snapshot.val().reservedBy) {
+        ons.notification.alert('You have already reserved this book.');
+      } else {
+        ons.notification.alert('You cannot reserve this book because someone else has already reserved it.');
+      }
     }
   });
 }
@@ -52,7 +56,7 @@ function checkoutBook(i) {
   // var userId = firebase.auth().currentUser.uid || "joe";
   var userId = "joe";
   var value = new Date();
-  var date = value.getMonth()+1 + "/" + value.getDate() + "/" + value.getFullYear();
+  var date = value.getMonth() + 1 + "/" + value.getDate() + "/" + value.getFullYear();
   firebase.database().ref('list/' + i + '/checkout').once('value', function(snapshot) {
     if (snapshot.val().checkedoutBy === "none") {
       ons.notification.alert('Navigate to the checkout page in order to check out this book.');
