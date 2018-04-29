@@ -1,4 +1,10 @@
 // document.addEventListener('init', function (event) {
+function loadData(){
+    loadMap();
+    loadLibData();
+    getAllBooks();
+}
+
   var ui = new firebaseui.auth.AuthUI(firebase.auth());
   var uiConfig = {
     callbacks: {
@@ -14,6 +20,7 @@
   firebase.auth().onAuthStateChanged(function(user) {
       if (user) {
         console.log("works");
+        loadData();
         document.getElementById('appNavigator').pushPage('pageWithSlider.html', {
           data: {
             title: 'MyLib'

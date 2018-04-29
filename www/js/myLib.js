@@ -1,12 +1,13 @@
 // console.log("works");
 // window.onload = function() {
 //   console.log("works");
+function loadLibData(){
   getCheckedOut();
   getReserved();
   getEvents();
   getTrending();
   getLibraryPicks();
-// }
+}
 
 function getCheckedOut() {
   var i = 0;

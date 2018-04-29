@@ -1,5 +1,3 @@
-getAllBooks();
-
 function getAllBooks() {
   var i = 0;
   firebase.database().ref('list').once('value', function(snapshot) {
