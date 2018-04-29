@@ -31,3 +31,29 @@ var logOut = function() {
     console.error('Sign Out Error', error);
   });
 }
+
+function checkFacebook() {
+  appAvailability.check(
+      'com.facebook.katana', // Package Name
+      function () {           // Success callback
+          window.plugins.socialsharing.shareViaFacebook(' your message here', null /* img */, ' http://www.yourwebsite.com/' /* url */, function () { console.log('share ok') }, function (errormsg) { alert(errormsg) })
+      },
+      function () {           // Error callback
+          ons.notification.confirm({
+              message: 'facebook is not installed. Do you want to install?',
+              title: 'Facebook unavailable',
+              buttonLabels: ['Yes', 'No'],
+              animation: 'slide',
+              primaryButtonIndex: 1,
+              cancelable: false,
+              callback: function (index) {
+                  if (index == 0) {
+                      window.open('https://play.google.com/store/apps', '_system')
+                  } else if (index == 1) {
+                      
+                  }
+                  
+              }
+          });
+      }
+  );

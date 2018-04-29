@@ -10,6 +10,7 @@
   <script src="https://www.gstatic.com/firebasejs/4.13.0/firebase.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="js/config.js"></script>
+  <script src="js/firebaseauthlogin.js"></script>
   <script src="js/map.js"></script>
   <script src="js/settings.js"></script>
   <script src="js/checkout.js"></script>
@@ -91,8 +92,9 @@
   <ons-navigator animation="fade" id="appNavigator" swipeable swipe-target-width="80px">
     <ons-page>
       <ons-splitter id="appSplitter">
+        <ons-splitter-content page="login.html"></ons-splitter-content>
         <ons-splitter-side id="sidemenu" page="settings.html" swipeable side="right" collapse="" width="260px"></ons-splitter-side>
-        <ons-splitter-content page="tabbar.html"></ons-splitter-content>
+        <!-- <ons-splitter-content page="tabbar.html"></ons-splitter-content> -->
       </ons-splitter>
     </ons-page>
   </ons-navigator>
@@ -109,15 +111,20 @@
         <input type="password" placeholder="password" ng-model="password" class="topcoat-text-input">
       </div>
     </div> -->
-
-    <div class="row">
+<template id="login.html">
+    <ons-page id="login">
+      <img src="images/SmartLibLogo.png" style="padding-top: 25px; padding-bottom: 25px; width: 80%; display: block; margin-left: auto; margin-right: auto;"></img>
+      <div style="text-align: center; margin-top: 30px;" id="firebaseui-auth-container"></div>
+    </ons-page>
+</template>
+    <!-- <div class="row">
       <div class="col">
         <ons-button ng-click="login(id, password)">
           Login
         </ons-button>
       </div>
     </div>
-  </div>
+  </div> -->
 
   <template id="tabbar.html">
   <ons-page id="tabbar-page">
@@ -131,7 +138,7 @@
       <div class="center">
         <ons-search-input
           placeholder="Search for Book"
-          onchange="ons.notification.alert('Searhed for: ' + this.value)"
+          onchange=searchBtn(this.value);
           style="margin-top: 5%; margin-bottom: 5%;"
         ></ons-search-input>
       </div>

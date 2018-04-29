@@ -8,7 +8,5 @@ var config = {
 };
 firebase.initializeApp(config);
 
-var CLIENT_ID = null;
-
 var database = firebase.database();
 var storage = firebase.storage();
