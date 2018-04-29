@@ -1,4 +1,4 @@
-document.addEventListener('init', function (event) {
+// document.addEventListener('init', function (event) {
   var ui = new firebaseui.auth.AuthUI(firebase.auth());
   var uiConfig = {
     callbacks: {
@@ -13,14 +13,15 @@ document.addEventListener('init', function (event) {
   ui.start('#firebaseui-auth-container', uiConfig);
   firebase.auth().onAuthStateChanged(function(user) {
       if (user) {
-        document.getElementById('appNavigator').pushPage(tabbar.html, {
+        console.log("works");
+        document.getElementById('appNavigator').pushPage('tabbar.html', {
           data: {
             title: 'MyLib'
           }
         });
       }
   });
-});
+// });
 
 // function getUiConfig() {
 //   return {
@@ -128,7 +129,7 @@ document.addEventListener('init', function (event) {
 // firebase.auth().onAuthStateChanged(function(user) {
 //   document.getElementById('loading').style.display = 'none';
 //   document.getElementById('loaded').style.display = 'block';
-  
+
 //   user ? handleSignedInUser(user) : handleSignedOutUser();
 // });
 

@@ -23,7 +23,7 @@ var logOut = function() {
             timeout: 2000
     });
     console.log('Signed Out');
-    
+
   }, function(error) {
     ons.notification.toast('Logout Error', error, {
             timeout: 2000
@@ -50,10 +50,11 @@ function checkFacebook() {
                   if (index == 0) {
                       window.open('https://play.google.com/store/apps', '_system')
                   } else if (index == 1) {
-                      
+
                   }
-                  
+
               }
           });
       }
   );
+}
