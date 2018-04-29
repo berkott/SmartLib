@@ -18,13 +18,14 @@ function getCheckedOut() {
       var title = childSnapshot.val().title;
       var checkedoutBy = childSnapshot.val().checkout.checkedoutBy;
       var date = childSnapshot.val().checkout.date;
-      console.log(date);
       date = Date.parse(date);
       var dateDue = date + 15*86400000;
       var currentTime = Date.now();
       var timeLeft = dateDue - currentTime;
       var daysLeft = Math.round(timeLeft/86400000);
+      logMsg("found checkout");
       if (checkedoutBy === userId) {
+        logMsg("matching id");
         $('#checkedOutContent').append("<div id='checkedOutContent" + i + "'><img id='checkoutBookPic" + i + "' style='width:20%; height:35%; text-align: left;'><div style='width:70%; float:right;'><div style='margin-bottom:6%'>Title: " + title + "</div><div>Days Left: " + daysLeft + "</div><ons-button modifier='quiet' class='button-margin' onclick='bookButton(" + i + ")'>View</ons-button></div><hr align='center' width='80%'></div>");
         addImage("checkout", i);
       }

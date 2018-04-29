@@ -1,5 +1,6 @@
 var showPrompt = function() {
   var time = Date.now();
+  var storageRef = storage.ref();
   var ref = storageRef.child('BugReports/report' + time + '.txt');
   ons.notification.prompt('Please tell us about any bugs and we will fix them as soon as possible.')
     .then(function(input) {
@@ -10,7 +11,6 @@ var showPrompt = function() {
           ons.notification.toast('Thank you for your feedback!', {
             timeout: 2000
           });
-          console.log('Uploaded a raw string!');
         });
       }
     });
@@ -57,4 +57,9 @@ function checkFacebook() {
           });
       }
   );
+}
+
+function logMsg(message){
+  // console.log("LLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLOGGGGGGGGGGGGGGGGGGGGGG "+message);
+  $('#logText').append("<br>"+message);
 }

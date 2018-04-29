@@ -20,11 +20,13 @@ function loadData(){
   firebase.auth().onAuthStateChanged(function(user) {
       if (user) {
         console.log("works");
-        loadData();
         document.getElementById('appNavigator').pushPage('pageWithSlider.html', {
           data: {
             title: 'MyLib'
           }
+        }).then(function(){
+          loadData();
+          logMsg("Loading data");
         });
       }
   });
