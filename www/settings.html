@@ -63,13 +63,13 @@
       <ons-fab>
         <ons-icon icon="md-share"></ons-icon>
       </ons-fab>
-      <ons-speed-dial-item onclick="fn.loadLink('https://twitter.com/')">
+      <ons-speed-dial-item onclick="window.plugins.socialsharing.shareViaTwitter('Message via Twitter')">
         <ons-icon icon="md-twitter"></ons-icon>
       </ons-speed-dial-item>
-      <ons-speed-dial-item onclick="checkFacebook()">
+      <ons-speed-dial-item onclick="window.plugins.socialsharing.shareViaFacebook('Message via Facebook', null /* img */, null /* url */, function() {console.log('share ok')}, function(errormsg){alert(errormsg)})">
         <ons-icon icon="md-facebook"></ons-icon>
       </ons-speed-dial-item>
-      <ons-speed-dial-item onclick="fn.loadLink('https://instagram.com/')">
+      <ons-speed-dial-item onclick="window.plugins.socialsharing.shareViaInstagram('Message via Instagram', 'https://www.google.nl/images/srpr/logo4w.png', function() {console.log('share ok')}, function(errormsg){alert(errormsg)})">
         <ons-icon icon="md-instagram"></ons-icon>
       </ons-speed-dial-item>
     </ons-speed-dial>

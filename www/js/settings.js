@@ -60,6 +60,5 @@ function checkFacebook() {
 }
 
 function logMsg(message){
-  // console.log("LLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLOGGGGGGGGGGGGGGGGGGGGGG "+message);
-  $('#logText').append("<br>"+message);
+  // $('#logText').append("<br>"+message);
 }

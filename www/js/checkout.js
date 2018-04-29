@@ -38,8 +38,8 @@ function enterISBN() {
 
 function confirmCheckout(isbn) {
   var j = 0;
-  // var userId = firebase.auth().currentUser.uid || "joe";
-  var userId = "joe";
+  var userId = firebase.auth().currentUser.uid;
+  // var userId = "joe";
   var value = new Date();
   var date = value.getMonth() + 1 + "/" + value.getDate() + "/" + value.getFullYear();
   var found = false;
