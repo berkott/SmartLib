@@ -32,6 +32,6 @@ FBLA Mobile App Development submission for Berkan and Shiv from Northview High S
 - jQuery
 
 ## Social Media
-https://twitter.com/SmartLibNHS
-https://fb.me/SmartLibNHS
-https://www.instagram.com/smartlibnhs/
+- https://twitter.com/SmartLibNHS
+- https://fb.me/SmartLibNHS
+- https://www.instagram.com/smartlibnhs/
