@@ -1,7 +1,7 @@
 <p align="center"><a href="https://github.com/berkott/SmartLib/" target="_blank"><img src="https://firebasestorage.googleapis.com/v0/b/libraryapp-backend.appspot.com/o/SmartLibLogoBlack.png?alt=media&token=5e422236-2cec-488a-85ae-5e08c172d490"></a>
   <h1>SmartLib</h1>
 </p>
-FBLA Mobile App Developemnt submission for Berkan and Shiv. 
+FBLA Mobile App Development submission for Berkan and Shiv from Northview High School Johns Creek, Georgia.
 
 ## Features
 - Easy Navigation
@@ -29,8 +29,9 @@ FBLA Mobile App Developemnt submission for Berkan and Shiv.
 - OnsenUI
 - Monaca
 - FuseJS
+- jQuery
 
 ## Social Media
 https://twitter.com/SmartLibNHS
-fb.me/SmartLibNHS
+https://fb.me/SmartLibNHS
 https://www.instagram.com/smartlibnhs/
