@@ -2,6 +2,7 @@
   <h1>SmartLib</h1>
 </p>
 FBLA Mobile App Development submission for Berkan and Shiv from Northview High School Johns Creek, Georgia.
+
 ## Goal
 Develop an app to manage the issuance of books and to provide other information at a school library. Give the school a name. The app must be able to do or show the following: Allow students and teachers to reserve books. Allow students and teachers to check out books. Remind students and teachers when books are overdue. Show a map of the school library.
 
