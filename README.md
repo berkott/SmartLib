@@ -16,10 +16,34 @@ FBLA Mobile App Development submission for Berkan and Shiv from Northview High S
 - Customizable School
 - Title and Author Fuzzy Search
 ## Pages
+
 Below is a quick explanation of all the pages with screen shots of what they can do
+
 ### MyLib
 
-### 
+<p align="center"><a href="https://github.com/berkott/SmartLib/" target="_blank"><img src="https://firebasestorage.googleapis.com/v0/b/libraryapp-backend.appspot.com/o/ScreenshotsAndPics%2FSmartLibLogoBlack.png?alt=media&token=2d36b3ef-7fe1-44aa-8ec1-e8c4867e33e9"></a>
+  <h1>SmartLib</h1>
+</p>
+
+<p align="center"><a href="https://github.com/berkott/SmartLib/" target="_blank"><img src="https://firebasestorage.googleapis.com/v0/b/libraryapp-backend.appspot.com/o/ScreenshotsAndPics%2FSmartLibLogoBlack.png?alt=media&token=2d36b3ef-7fe1-44aa-8ec1-e8c4867e33e9"></a>
+  <h1>SmartLib</h1>
+</p>
+
+### Catalog
+
+### Checkout
+
+### Map
+
+### Settings
+
+#### Help
+
+#### About
+
+#### Bug Reports
+
+#### Social
 
 ## How to Download
 1. Navigate to the Releases page: https://github.com/shiv213/SmartLib/releases.
