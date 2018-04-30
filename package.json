@@ -6,7 +6,8 @@
         "cordova-plugin-whitelist": "1.3.3",
         "monaca-plugin-monaca-core": "3.2.0",
         "phonegap-plugin-barcodescanner": "git+https:\/\/github.com\/phonegap\/phonegap-plugin-barcodescanner.git",
-        "cordova-plugin-x-socialsharing": "git+https:\/\/github.com\/EddyVerbruggen\/SocialSharing-PhoneGap-Plugin.git"
+        "cordova-plugin-x-socialsharing": "git+https:\/\/github.com\/EddyVerbruggen\/SocialSharing-PhoneGap-Plugin.git",
+        "mobi.monaca.plugins.MonacaBackend": "1.4.0"
     },
     "cordova": {
         "plugins": {
@@ -15,7 +16,8 @@
             "cordova-plugin-whitelist": {},
             "monaca-plugin-monaca-core": {},
             "phonegap-plugin-barcodescanner": {},
-            "cordova-plugin-x-socialsharing": {}
+            "cordova-plugin-x-socialsharing": {},
+            "mobi.monaca.plugins.MonacaBackend": {}
         }
     }
 }

@@ -18,5 +18,5 @@ var showPrompt = function() {
 
 function logMsg(message){
   console.log(message);
-  $('#logText').append("<br>"+message);
+  // $('#logText').append("<br>"+message);
 }
