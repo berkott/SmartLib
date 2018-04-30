@@ -13,7 +13,6 @@ function searchBooks(queryText) {
         database.ref('list').once('value', function(snapshot) {
             var allbooks = snapshot.val();
             resolve(allbooks);
-            // console.log(allbooks);
             var titles = [];
             var v = 0;
             while (v < (allbooks.length - 1)) {
@@ -34,7 +33,6 @@ function searchBooks(queryText) {
                 keys: ["longTitle", "author"]
             };
             var fuse = new Fuse(allbooks,options);
-            // "list" is the item array
             var result = fuse.search(queryText);
             console.log(result);
 
@@ -54,16 +52,10 @@ function searchBooks(queryText) {
                     var author = snapshot.val().author || "None";
                     var category = snapshot.val().category || "None";
                     var pages = snapshot.val().pages || "None";
-                    $('#searchResults').append("<ons-card><div class='title'>" + title + "</div><div class='content'><img id='specificBookPic" + i + "' style='width:20%; height:35%; text-align: left;'><div style='width:70%; float:right;'><div style='margin-bottom:6%'>Author: " + author + "</div><div style='margin-bottom:6%'>Category: " + category + "</div><ons-button modifier='quiet' class='button-margin' onclick='bookButton(" + i + ")'>View</ons-button></div></div></ons-card>");
-                    addImage("specific", i);
+                    $('#searchResults').append("<ons-card><div class='title'>" + title + "</div><div class='content'><img id='searchBookPic" + i + "' style='width:20%; height:35%; text-align: left;'><div style='width:70%; float:right;'><div style='margin-bottom:6%'>Author: " + author + "</div><div style='margin-bottom:6%'>Category: " + category + "</div><ons-button modifier='quiet' class='button-margin' onclick='bookButton(" + i + ")'>View</ons-button></div></div></ons-card>");
+                    addImage("search", i);
                 });
             };
-
-            ons.notification.toast('Searched for ' + queryText, {
-                timeout: 2000
-            });
-
         });
     });
-
-};
+}

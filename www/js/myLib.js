@@ -106,6 +106,7 @@ function getLibraryPicks() {
 }
 
 function addImage(type, i) {
+  console.log(type + ", i: " + i);
   var storageRef = storage.ref();
   storageRef.child('/BookCovers/' + i + '.jpg').getDownloadURL().then(function(url) {
     var img = document.getElementById(type + 'BookPic' + i);
