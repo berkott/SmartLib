@@ -8,7 +8,7 @@ FBLA Mobile App Developemnt submission for Berkan and Shiv.
 - Simple Google OAuth Login
 - Sleek OnsenUI
 - High Quality Graphics
-- Minimal Bugs
+- Bug-Free
 - Social Media Integration
 - Customizable School
 - Responsive Layout
