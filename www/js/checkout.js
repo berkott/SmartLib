@@ -47,26 +47,40 @@ function confirmCheckout(isbn) {
     snapshot.forEach(function(childSnapshot) {
       var bookISBN = childSnapshot.val().isbn;
       var checkedoutBy = childSnapshot.val().checkout.checkedoutBy;
-      if (bookISBN === isbn) {
-        found = true;
-        if (checkedoutBy === 'none') {
-          var i = j;
-          ons.notification.confirm('Do you wish to checkout the book with the ISBN of ' + isbn + '?')
-            .then(function(input) {
-              if (input) {
-                firebase.database().ref('list/' + i + '/checkout').set({
-                  checkedoutBy: userId,
-                  date: date
-                }).then(function() {
-                  ons.notification.alert('You have checked out your book until 2 weeks from today');
-                });
-              }
-            });
-        } else if (checkedoutBy === userId){
-          ons.notification.alert('You cannot check out this book because you have already checked it out.');
-        } else {
-          ons.notification.alert('You cannot check out this book because someone else has already checked it out.');
+      var reservedBy = childSnapshot.val().reserve.reservedBy;
+      if (reservedBy === "none" || reservedBy === userId) {
+        if (bookISBN === isbn) {
+          found = true;
+          if (checkedoutBy === 'none') {
+            var i = j;
+            ons.notification.confirm('Do you wish to checkout the book with the ISBN of ' + isbn + '?')
+              .then(function(input) {
+                if (input) {
+                  firebase.database().ref('list/' + i + '/checkout').set({
+                    checkedoutBy: userId,
+                    date: date
+                  }).then(function() {
+                    if (reservedBy === userId) {
+                      firebase.database().ref('list/' + i + '/reserve').set({
+                        reservedBy: 'none',
+                        date: 'none'
+                      }).then(function() {
+                        ons.notification.alert('You have checked out your book until 2 weeks from today');
+                      });
+                    } else {
+                      ons.notification.alert('You have checked out your book until 2 weeks from today');
+                    }
+                  });
+                }
+              });
+          } else if (checkedoutBy === userId) {
+            ons.notification.alert('You cannot check out this book because you have already checked it out.');
+          } else {
+            ons.notification.alert('You cannot check out this book because someone else has already checked it out.');
+          }
         }
+      } else {
+        ons.notification.alert('You cannot check out this book because someone else has reserved it.');
       }
       j++;
     });

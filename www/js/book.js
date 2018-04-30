@@ -3,6 +3,7 @@ function bookButton(i) {
     'id': 'book.html',
     'title': 'Book'
   });
+  console.log(i);
   getBooks(i);
 }
 
@@ -20,6 +21,7 @@ function getBooks(i) {
       "<ons-button modifier='large' class='button-margin' onclick='reserveBook(" + i + ")'>Reserve</ons-button>" +
       "<ons-button modifier='large' class='button-margin' style='margin-top: 5px;' onclick='checkoutBook(" + i + ")'>Checkout</ons-button>" +
       "</section>");
+     console.log(i);
     addImage("specific", i);
   });
 }
@@ -28,7 +30,6 @@ function reserveBook(i) {
   var userId = firebase.auth().currentUser.uid;
   console.log(userId);
   logMsg(userId);
-  // var userId = "joe";
   var value = new Date();
   var date = value.getMonth() + 1 + "/" + value.getDate() + "/" + value.getFullYear();
   firebase.database().ref('list/' + i + '/reserve').once('value', function(snapshot) {
@@ -56,7 +57,6 @@ function reserveBook(i) {
 
 function checkoutBook(i) {
   var userId = firebase.auth().currentUser.uid;
-  // var userId = "joe";
   var value = new Date();
   var date = value.getMonth() + 1 + "/" + value.getDate() + "/" + value.getFullYear();
   firebase.database().ref('list/' + i + '/checkout').once('value', function(snapshot) {
