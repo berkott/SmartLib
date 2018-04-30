@@ -1,3 +1,5 @@
+<p align="center"><a href="https://github.com/berkott/SmartLib/" target="_blank"><img src="https://firebasestorage.googleapis.com/v0/b/libraryapp-backend.appspot.com/o/SmartLibLogoBlack.png?alt=media&token=5e422236-2cec-488a-85ae-5e08c172d490"></a></p>
+
 # SmartLib
 FBLA Mobile App Developemnt submission for Berkan and Shiv. 
 
