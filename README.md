@@ -1,4 +1,4 @@
-<p align="center"><a href="https://github.com/berkott/SmartLib/" target="_blank"><img src="https://firebasestorage.googleapis.com/v0/b/libraryapp-backend.appspot.com/o/SmartLibLogoBlack.png?alt=media&token=5e422236-2cec-488a-85ae-5e08c172d490"></a>
+<p align="center"><a href="https://github.com/berkott/SmartLib/" target="_blank"><img src="https://firebasestorage.googleapis.com/v0/b/libraryapp-backend.appspot.com/o/ScreenshotsAndPics%2FSmartLibLogoBlack.png?alt=media&token=2d36b3ef-7fe1-44aa-8ec1-e8c4867e33e9"></a>
   <h1>SmartLib</h1>
 </p>
 FBLA Mobile App Development submission for Berkan and Shiv from Northview High School Johns Creek, Georgia.
