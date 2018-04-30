@@ -17,6 +17,7 @@ FBLA Mobile App Developemnt submission for Berkan and Shiv.
 - Scan to Checkout Books
 - Easily Accessable Map
 - Fast Checkout
+- Multiplatform (Android, iOS, & Windows)
 
 ## How to Download
 1. Navigate to the Releases page: https://github.com/shiv213/SmartLib/releases.
