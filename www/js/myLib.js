@@ -1,4 +1,5 @@
 function loadLibData(){
+  logMsg("loadLibData");
   getCheckedOut();
   getReserved();
   getEvents();
@@ -40,7 +41,7 @@ function getReserved() {
       var reservedBy = childSnapshot.val().reserve.reservedBy;
       var date = childSnapshot.val().reserve.date;
       date = Date.parse(date);
-      var dateDue = date + 14*86400000;
+      var dateDue = date + 15*86400000;
       var currentTime = Date.now();
       var timeLeft = dateDue - currentTime;
       var daysLeft = Math.round(timeLeft/86400000);
@@ -54,12 +55,19 @@ function getReserved() {
 }
 
 function getEvents() {
+  logMsg("getEvents");
   firebase.database().ref('events').once('value', function(snapshot) {
     snapshot.forEach(function(childSnapshot) {
+      logMsg("adding event");
       var name = childSnapshot.val().name;
       var date = childSnapshot.val().date;
       var time = childSnapshot.val().time;
       var reminders = childSnapshot.val().reminders;
+      if($('#eventsContent').length){
+        logMsg("eventcontent available");
+      }else{
+        logMsg("ERR: eventcontent NOT available");
+      }
       $('#eventsContent').append("<div><div style='font-size: 17px;'>"+name+"</div><div>Reminders: "+reminders+"</div><div>Date: "+date+"</div><div>Time: "+time+"</div><hr align='center' width='80%'></div>");
     });
   });

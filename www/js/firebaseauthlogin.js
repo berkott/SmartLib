@@ -22,7 +22,7 @@ function loadData(){
   ui.start('#firebaseui-auth-container', uiConfig);
   firebase.auth().onAuthStateChanged(function(user) {
       if (user) {
-        console.log("works");
+        logMsg("works");
         document.getElementById('appNavigator').pushPage('pageWithSlider.html', {
           data: {
             title: 'MyLib'
@@ -30,7 +30,8 @@ function loadData(){
         }).then(function(){
           loadData();
           logMsg("Loading data");
+        }).catch(function(){
+          logMsg("Error: problem pushing page");
         });
       }
   });
-  
