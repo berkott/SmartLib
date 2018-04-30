@@ -26,6 +26,8 @@ function getBooks(i) {
 
 function reserveBook(i) {
   var userId = firebase.auth().currentUser.uid;
+  console.log(userId);
+  logMsg(userId);
   // var userId = "joe";
   var value = new Date();
   var date = value.getMonth() + 1 + "/" + value.getDate() + "/" + value.getFullYear();
@@ -43,7 +45,7 @@ function reserveBook(i) {
           }
         });
     } else {
-      if (userId === snapshot.val().reservedBy) {
+      if (snapshot.val().reservedBy === userId) {
         ons.notification.alert('You have already reserved this book.');
       } else {
         ons.notification.alert('You cannot reserve this book because someone else has already reserved it.');
