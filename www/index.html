@@ -9,7 +9,6 @@
   <script src="lib/onsenui/js/onsenui.min.js"></script>
   <script src="https://www.gstatic.com/firebasejs/4.13.0/firebase.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js"></script>
   <script src="https://cdn.firebase.com/libs/firebaseui/2.7.0/firebaseui.js"></script>
   <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/2.7.0/firebaseui.css" />
   <link type="text/css" rel="stylesheet" href="dist/firebaseui.css" />
@@ -22,6 +21,7 @@
   <script src="js/catalog.js"></script>
   <script src="js/book.js"></script>
   <script src="js/search.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.0.4/fuse.min.js"></script>
 
 
   <link rel="stylesheet" href="components/loader.css">
@@ -112,8 +112,40 @@
         <ons-search-input
           placeholder="Search for Book"
           onchange=searchBtn(this.value);
-          style="margin-left: 6%; margin-top: 5%; margin-bottom: 5%;"
+          style="margin-left: 0%; margin-top: 5%; margin-bottom: 5%;"
         ></ons-search-input>
+          <div class="speech">
+            <!-- <input type="text" name="q" id="transcript" placeholder="Speak" /> -->
+            <img onclick="startDictation()" src="//i.imgur.com/cHidSVu.gif" />
+          </div>
+        <!-- HTML5 Speech Recognition API -->
+        <script>
+          function startDictation() {
+
+            if (window.hasOwnProperty('webkitSpeechRecognition')) {
+
+              var recognition = new webkitSpeechRecognition();
+
+              recognition.continuous = false;
+              recognition.interimResults = false;
+
+              recognition.lang = "en-US";
+              recognition.start();
+
+              recognition.onresult = function(e) {
+                document.getElementById('transcript').value
+                                        = e.results[0][0].transcript;
+                recognition.stop();
+                document.getElementById('labnol').submit();
+              };
+
+              recognition.onerror = function(e) {
+                recognition.stop();
+              }
+
+            }
+          }
+        </script>
       </div>
     </ons-toolbar>
     <ons-tabbar swipeable id="appTabbar" position="auto">

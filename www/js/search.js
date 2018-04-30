@@ -1,78 +1,69 @@
 function searchBtn(queryText) {
-  fn.pushPage({
-    'id': 'search.html',
-    'title': 'Search'
-  });
-  searchBooks(queryText);
+    fn.pushPage({
+        'id': 'search.html',
+        'title': 'Search'
+    });
+    searchBooks(queryText);
 }
 
 var databaseReference = firebase.database();
 
 function searchBooks(queryText) {
-  return new Promise((resolve, reject) => {
-      database.ref('list').once('value', function(snapshot) {
-          var allbooks = snapshot.val();
-          resolve(allbooks);
-          // console.log(allbooks);
-          var titles = [];
-          var v = 0;
-          while (v < allbooks.length) {
-            titles.push(allbooks[v].title)
-            v = v++;
-          };
-          console.log(queryText);
-          console.log(titles);
+    return new Promise((resolve,reject)=>{
+        database.ref('list').once('value', function(snapshot) {
+            var allbooks = snapshot.val();
+            resolve(allbooks);
+            // console.log(allbooks);
+            var titles = [];
+            var v = 0;
+            while (v < (allbooks.length - 1)) {
+                titles.push(allbooks[v].longTitle);
+                v = v + 1;
+            }
+            ;console.log(allbooks);
+            console.log(titles);
 
-          var fuzzy = function(items, key) {
-            // Returns a method that you can use to create your own reusable fuzzy search.
-
-            return function(query) {
-              var words  = query.toLowerCase().split(' ');
-
-              return items.filter(function(item) {
-                var normalizedTerm = item[key].toLowerCase();
-
-                return words.every(function(word) {
-                  return (normalizedTerm.indexOf(word) > -1);
-                });
-              });
+            var options = {
+                shouldSort: true,
+                findAllMatches: true,
+                threshold: 0.6,
+                location: 0,
+                distance: 100,
+                maxPatternLength: 32,
+                minMatchCharLength: 1,
+                keys: ["longTitle", "author"]
             };
-          };
+            var fuse = new Fuse(allbooks,options);
+            // "list" is the item array
+            var result = fuse.search(queryText);
+            console.log(result);
 
-          var searchByTitle = fuzzy(allbooks, 'longTitle');
+            var f = 0;
 
-          searchByTitle(queryText) // returns the 1st and 2nd items
+            while (f < (result.length)) {
+                if (result[f] != null) {
+                    i = result[f].id;
+                    writeCard(i);
+                };
+                f = f + 1;
+            };
 
-          if (titles.some(titles => (queryText).includes(titles))) {
-            ons.notification.toast(queryText + 'found!', {
-                          timeout: 2000
+            function writeCard(i) {
+                firebase.database().ref('list/' + i + '').once('value', function(snapshot) {
+                    var title = snapshot.val().title;
+                    var author = snapshot.val().author || "None";
+                    var category = snapshot.val().category || "None";
+                    var pages = snapshot.val().pages || "None";
+                    $('#searchResults').append("<ons-card><div class='title'>" + title + "</div><div class='content'><img id='specificBookPic" + i + "' style='width:20%; height:35%; text-align: left;'><div style='width:70%; float:right;'><div style='margin-bottom:6%'>Author: " + author + "</div><div style='margin-bottom:6%'>Category: " + category + "</div><ons-button modifier='quiet' class='button-margin' onclick='bookButton(" + i + ")'>View</ons-button></div></div></ons-card>");
+                    addImage("specific", i);
+                });
+            };
+
+            ons.notification.toast('Searched for ' + queryText, {
+                timeout: 2000
             });
 
-          } else {
-            ons.notification.toast(queryText + ' not found.', {
-                          timeout: 2000
-            });
-          };
+        });
+    });
 
-      });
-  });
-
-  var i = queryText;
-
-
-  firebase.database().ref('list/' + i + '').once('value', function(snapshot) {
-    var title = snapshot.val().title;
-    var author = snapshot.val().author || "None";
-    var category = snapshot.val().category || "None";
-    var pages = snapshot.val().pages || "None";
-    $('#searchResults').append("<ons-card><div class='title'>" + title + "</div><div class='content'><img id='specificBookPic" + i +
-      "' style='width:20%; height:35%; text-align: left;'><div style='width:70%; float:right;'><div style='margin-bottom:6%'>Author: " + author +
-      "</div><div style='margin-bottom:6%'>Category: " + category +
-      "</div><div>Pages: " + pages +
-      "</div></div></div></ons-card><section style='margin: 16px'>" +
-      "<ons-button modifier='large' class='button-margin' onclick='reserveBook(" + i + ")'>Reserve</ons-button>" +
-      "<ons-button modifier='large' class='button-margin' style='margin-top: 5px;' onclick='checkoutBook(" + i + ")'>Checkout</ons-button>" +
-      "</section>");
-    addImage("specific", i);
-  });
-}
+};
