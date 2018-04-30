@@ -9,6 +9,7 @@
   <script src="lib/onsenui/js/onsenui.min.js"></script>
   <script src="https://www.gstatic.com/firebasejs/4.13.0/firebase.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js"></script>
   <script src="https://cdn.firebase.com/libs/firebaseui/2.7.0/firebaseui.js"></script>
   <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/2.7.0/firebaseui.css" />
   <link type="text/css" rel="stylesheet" href="dist/firebaseui.css" />
@@ -81,16 +82,6 @@
   <ons-navigator animation="fade" id="appNavigator" page="login.html" swipeable swipe-target-width="80px">
   </ons-navigator>
 
-  <!-- <ons-navigator animation="fade" id="appNavigator" swipeable swipe-target-width="80px">
-    <ons-page>
-      <ons-splitter id="appSplitter">
-        <ons-splitter-content page="login.html"></ons-splitter-content>
-        <ons-splitter-side id="sidemenu" page="settings.html" swipeable side="right" collapse="" width="260px"></ons-splitter-side>
-        <ons-splitter-content page="tabbar.html"></ons-splitter-content>
-      </ons-splitter>
-    </ons-page>
-  </ons-navigator> -->
-
   <template id="login.html">
     <ons-page id="login">
       <img src="images/SmartLibLogoBlack.png" style="padding-top: 25px; padding-bottom: 25px; width: 80%; display: block; margin-left: auto; margin-right: auto;"></img>
@@ -120,7 +111,7 @@
         <ons-search-input
           placeholder="Search for Book"
           onchange=searchBtn(this.value);
-          style="margin-top: 5%; margin-bottom: 5%;"
+          style="margin-left: 6%; margin-top: 5%; margin-bottom: 5%;"
         ></ons-search-input>
       </div>
     </ons-toolbar>
@@ -129,13 +120,8 @@
       <ons-tab label="Catalog" icon="fa-book" page="catalog.html"></ons-tab>
       <ons-tab label="Checkout" icon="md-camera" page="checkout.html"></ons-tab>
       <ons-tab label="Map" icon="md-map" page="map.html"></ons-tab>
-      <!-- <ons-tab label="Log" icon="md-map" page="log.html"></ons-tab> -->
+      <ons-tab label="Log" icon="md-map" page="log.html"></ons-tab>
     </ons-tabbar>
-    <!-- <ons-splitter id="appSplitter2"> -->
-      <!-- <ons-splitter-content page="login.html"></ons-splitter-content> -->
-      <!-- <ons-splitter-side id="sidemenu" page="settings.html" swipeable side="right" collapse="" width="260px"></ons-splitter-side> -->
-      <!-- <ons-splitter-content page="tabbar.html"></ons-splitter-content> -->
-    <!-- </ons-splitter> -->
     <script>
       ons.getScriptPage().addEventListener('prechange', function(event) {
         if (event.target.matches('#appTabbar')) {

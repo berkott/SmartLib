@@ -1,6 +1,3 @@
-// console.log("works");
-// window.onload = function() {
-//   console.log("works");
 function loadLibData(){
   getCheckedOut();
   getReserved();
@@ -12,6 +9,7 @@ function loadLibData(){
 function getCheckedOut() {
   var i = 0;
   var userId = firebase.auth().currentUser.uid;
+  console.log(userId + " at myLib");
   firebase.database().ref('list').once('value', function(snapshot) {
     snapshot.forEach(function(childSnapshot) {
       var title = childSnapshot.val().title;
