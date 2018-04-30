@@ -28,7 +28,7 @@ function loadData(){
             title: 'MyLib'
           }
         }).then(function(){
-          loadData();
+          setTimeout(loadData, 1000);
           logMsg("Loading data");
         }).catch(function(){
           logMsg("Error: problem pushing page");

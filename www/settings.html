@@ -66,13 +66,16 @@
       <ons-speed-dial-item onclick="window.plugins.socialsharing.share('Get SmartLib today in order to revolutionize your library system instantly!', 'SmartLib', 'https://image.ibb.co/bCLiBx/instagram_Share.png', 'https://github.com/berkott/SmartLib')">
         <ons-icon icon="md-share"></ons-icon>
       </ons-speed-dial-item>
-      <ons-speed-dial-item onclick="window.plugins.socialsharing.shareViaTwitter('Get SmartLib today in order to revolutionize your library system instantly!', 'https://image.ibb.co/bCLiBx/instagram_Share.png', 'https://github.com/berkott/SmartLib')">
+      <!-- <ons-speed-dial-item onclick="window.plugins.socialsharing.shareViaTwitter('Get SmartLib today in order to revolutionize your library system instantly!', 'https://image.ibb.co/bCLiBx/instagram_Share.png', 'https://github.com/berkott/SmartLib')"> -->
+      <ons-speed-dial-item onclick="fn.loadLink('https://twitter.com/SmartLibNHS')">
         <ons-icon icon="md-twitter"></ons-icon>
       </ons-speed-dial-item>
-      <ons-speed-dial-item onclick="window.plugins.socialsharing.shareViaFacebook('Get SmartLib today in order to revolutionize your library system instantly!', 'https://image.ibb.co/bCLiBx/instagram_Share.png', https://github.com/berkott/SmartLib, function() {console.log('share ok')}, function(errormsg){alert(errormsg)})">
+      <!-- <ons-speed-dial-item onclick="window.plugins.socialsharing.shareViaFacebook('Get SmartLib today in order to revolutionize your library system instantly!', 'https://image.ibb.co/bCLiBx/instagram_Share.png', https://github.com/berkott/SmartLib, function() {console.log('share ok')}, function(errormsg){alert(errormsg)})"> -->
+      <ons-speed-dial-item onclick="fn.loadLink('fb.me/SmartLibNHS')">
         <ons-icon icon="md-facebook"></ons-icon>
       </ons-speed-dial-item>
-      <ons-speed-dial-item onclick="window.plugins.socialsharing.shareViaInstagram('Get SmartLib today in order to revolutionize your library system instantly!', 'https://image.ibb.co/bCLiBx/instagram_Share.png', function() {console.log('share ok')}, function(errormsg){alert(errormsg)})">
+      <!-- <ons-speed-dial-item onclick="window.plugins.socialsharing.shareViaInstagram('Get SmartLib today in order to revolutionize your library system instantly!', 'https://image.ibb.co/bCLiBx/instagram_Share.png', function() {console.log('share ok')}, function(errormsg){alert(errormsg)})"> -->
+      <ons-speed-dial-item onclick="fn.loadLink('https://www.instagram.com/smartlibnhs/')">
         <ons-icon icon="md-instagram"></ons-icon>
       </ons-speed-dial-item>
     </ons-speed-dial>
