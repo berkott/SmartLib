@@ -19,9 +19,10 @@ var showPrompt = function() {
 var logOut = function() {
   var fb = firebase.auth();
   firebase.auth().signOut().then(function() {
-    ons.notification.toast('Logged Out!', {
+    ons.notification.toast('Logged Out', {
             timeout: 2000
     });
+    location.reload(20)
     console.log('Signed Out');
 
   }, function(error) {
