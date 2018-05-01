@@ -1,3 +1,4 @@
+// Handle Search Button Press (Open Search Page)
 function searchBtn(queryText) {
     fn.pushPage({
         'id': 'search.html',
@@ -6,8 +7,10 @@ function searchBtn(queryText) {
     searchBooks(queryText);
 }
 
+// Initialize Firebase Reference
 var databaseReference = firebase.database();
 
+// Get all books and fuzzy search authors and titles for query
 function searchBooks(queryText) {
     return new Promise((resolve,reject)=>{
         database.ref('list').once('value', function(snapshot) {
@@ -38,6 +41,7 @@ function searchBooks(queryText) {
 
             var f = 0;
 
+            // Iteratively Write Results on Cards
             while (f < (result.length)) {
                 if (result[f] != null) {
                     i = result[f].id;

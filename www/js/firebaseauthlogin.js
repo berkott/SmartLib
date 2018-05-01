@@ -1,10 +1,11 @@
-// document.addEventListener('init', function (event) {
+// Load all data
 function loadData(){
     loadMap();
     loadLibData();
     getAllBooks();
 }
 
+  // Define AuthUI element
   var ui = new firebaseui.auth.AuthUI(firebase.auth());
   var uiConfig = {
     callbacks: {
@@ -19,6 +20,7 @@ function loadData(){
       }
     ],
   };
+  // Start AuthUI Element
   ui.start('#firebaseui-auth-container', uiConfig);
   firebase.auth().onAuthStateChanged(function(user) {
       if (user) {

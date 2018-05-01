@@ -1,3 +1,4 @@
+// Load all Data (Call all functions)
 function loadLibData(){
   logMsg("loadLibData");
   getCheckedOut();
@@ -7,6 +8,7 @@ function loadLibData(){
   getLibraryPicks();
 }
 
+// Get Checked Out Book(s) from Backend (Firebase)
 function getCheckedOut() {
   var i = 0;
   var userId = firebase.auth().currentUser.uid;
@@ -32,6 +34,7 @@ function getCheckedOut() {
   });
 }
 
+// Get Reserved Book(s) from Backend (Firebase)
 function getReserved() {
   var i = 0;
   var userId = firebase.auth().currentUser.uid;
@@ -54,6 +57,7 @@ function getReserved() {
   });
 }
 
+// Get Event(s) from Backend (Firebase)
 function getEvents() {
   logMsg("getEvents");
   firebase.database().ref('events').once('value', function(snapshot) {
@@ -73,6 +77,7 @@ function getEvents() {
   });
 }
 
+// Get Trending Book(s) from Backend (Firebase)
 function getTrending() {
   var i = 0;
   firebase.database().ref('list').once('value', function(snapshot) {
@@ -89,6 +94,7 @@ function getTrending() {
   });
 }
 
+// Get Library Pick(s) from Backend (Firebase)
 function getLibraryPicks() {
   var i = 0;
   firebase.database().ref('list').once('value', function(snapshot) {

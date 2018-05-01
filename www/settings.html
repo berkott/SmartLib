@@ -1,15 +1,20 @@
+<!-- Page Initialization -->
 <ons-page>
+    <!-- Logo -->
     <div class="profile-pic">
       <img src="images/SmartLibLogoBlack.png">
     </div>
+    <!-- School -->
     <p style="margin-left:10%">Northview High School</p>
 
+    <!-- Settings Button List Initialization -->
     <ons-list-title>Settings</ons-list-title>
     <ons-list>
       <ons-list-item onclick="showPrompt()">
         <div class="left">
           <ons-icon fixed-width class="list-item__icon" icon="md-bug"></ons-icon>
         </div>
+        <!-- Bug Report Container -->
         <div class="center">
           Bug Reports
         </div>
@@ -18,6 +23,7 @@
         <div class="left">
           <ons-icon fixed-width class="list-item__icon" icon="md-help"></ons-icon>
         </div>
+        <!-- Help Container -->
         <div class="center">
           Help
         </div>
@@ -26,21 +32,24 @@
         <div class="left">
           <ons-icon fixed-width class="list-item__icon" icon="md-info"></ons-icon>
         </div>
+        <!-- About Container -->
         <div class="center">
           About
         </div>
       </ons-list-item>
     </ons-list>
+    <!-- Logout Button -->
     <section style="margin: 16px">
       <ons-button onclick="firebase.auth().signOut().then(() => location.reload())" modifier="large" class="button-margin" style="margin-top:16px">Logout</ons-button>
     </section>
+    <!-- Animation Scripts -->
     <script>
       ons.getScriptPage().onInit = function() {
         // Set ons-splitter-side animation
         this.parentElement.setAttribute('animation', ons.platform.isAndroid() ? 'overlay' : 'reveal');
       };
     </script>
-
+    <!-- Styles -->
     <style>
       .profile-pic {
         width: 200px;
@@ -59,6 +68,7 @@
         color: #444;
       }
     </style>
+    <!-- Social Media Sharing Dial -->
     <ons-speed-dial position="bottom right" direction="up" :open.sync="spdOpen">
       <ons-fab>
         <ons-icon icon="md-share"></ons-icon>

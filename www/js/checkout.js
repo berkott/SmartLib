@@ -1,3 +1,4 @@
+// Barcode scanning function
 function scanBarcode() {
   cordova.plugins.barcodeScanner.scan(
     function(result) {
@@ -17,7 +18,7 @@ function scanBarcode() {
       preferFrontCamera: true, // iOS and Android
       showFlipCameraButton: true, // iOS and Android
       showTorchButton: true, // iOS and Android
-      torchOn: true, // Android, launch with the torch switched on (if available)
+      torchOn: false, // Android, launch with the torch switched on (if available)
       saveHistory: true, // Android, save scan history (default false)
       prompt: "Place a barcode inside the scan area", // Android
       resultDisplayDuration: 500, // Android, display scanned text for X ms. 0 suppresses it entirely, default 1500
@@ -29,6 +30,7 @@ function scanBarcode() {
   );
 }
 
+// Manual ISBN lookup
 function enterISBN() {
   var isbn = document.getElementById('textISBN').value;
   if (isbn) {
@@ -36,6 +38,7 @@ function enterISBN() {
   }
 }
 
+// Checkout Confirmation
 function confirmCheckout(isbn) {
   var j = 0;
   var userId = firebase.auth().currentUser.uid;
@@ -48,40 +51,41 @@ function confirmCheckout(isbn) {
       var bookISBN = childSnapshot.val().isbn;
       var checkedoutBy = childSnapshot.val().checkout.checkedoutBy;
       var reservedBy = childSnapshot.val().reserve.reservedBy;
-      if (reservedBy === "none" || reservedBy === userId) {
         if (bookISBN === isbn) {
-          found = true;
-          if (checkedoutBy === 'none') {
-            var i = j;
-            ons.notification.confirm('Do you wish to checkout the book with the ISBN of ' + isbn + '?')
-              .then(function(input) {
-                if (input) {
-                  firebase.database().ref('list/' + i + '/checkout').set({
-                    checkedoutBy: userId,
-                    date: date
-                  }).then(function() {
-                    if (reservedBy === userId) {
-                      firebase.database().ref('list/' + i + '/reserve').set({
-                        reservedBy: 'none',
-                        date: 'none'
-                      }).then(function() {
+          if (reservedBy === "none" || reservedBy === userId) {
+            found = true;
+            if (checkedoutBy === 'none') {
+              var i = j;
+              ons.notification.confirm('Do you wish to checkout the book with the ISBN of ' + isbn + '?')
+                .then(function(input) {
+                  if (input) {
+                    firebase.database().ref('list/' + i + '/checkout').set({
+                      checkedoutBy: userId,
+                      date: date
+                    }).then(function() {
+                      if (reservedBy === userId) {
+                        firebase.database().ref('list/' + i + '/reserve').set({
+                          reservedBy: 'none',
+                          date: 'none'
+                        }).then(function() {
+                          ons.notification.alert('You have checked out your book until 2 weeks from today');
+                        });
+                      } else {
                         ons.notification.alert('You have checked out your book until 2 weeks from today');
-                      });
-                    } else {
-                      ons.notification.alert('You have checked out your book until 2 weeks from today');
-                    }
-                  });
-                }
-              });
-          } else if (checkedoutBy === userId) {
-            ons.notification.alert('You cannot check out this book because you have already checked it out.');
+                      }
+                    });
+                  }
+                });
+            
+            } else if (checkedoutBy === userId) {
+              ons.notification.alert('You cannot check out this book because you have already checked it out.');
+            } else {
+              ons.notification.alert('You cannot check out this book because someone else has already checked it out.');
+            }
           } else {
-            ons.notification.alert('You cannot check out this book because someone else has already checked it out.');
+            ons.notification.alert('You cannot check out this book because someone else has reserved it.');
           }
         }
-      } else {
-        ons.notification.alert('You cannot check out this book because someone else has reserved it.');
-      }
       j++;
     });
     if (found === false) {

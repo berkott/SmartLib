@@ -1,3 +1,4 @@
+// Send Bug Reports to Backend (Firebase)
 var showPrompt = function() {
   var time = Date.now();
   var storageRef = storage.ref();
@@ -7,7 +8,7 @@ var showPrompt = function() {
       var message = input;
       if (message) {
         ref.putString(message).then(function(snapshot) {
-          // successToast.toggle();
+          // Notification
           ons.notification.toast('Thank you for your feedback!', {
             timeout: 2000
           });
@@ -16,6 +17,7 @@ var showPrompt = function() {
     });
 };
 
+// Log Messages
 function logMsg(message){
   console.log(message);
   // $('#logText').append("<br>"+message);

@@ -1,5 +1,5 @@
 <ons-page>
-  <!-- <h2>Checkout</h2> -->
+  <!-- ISBN Input (Checkout) -->
   <ons-card>
     <div class="title">Enter ISBN</div>
     <div class="content">
@@ -8,6 +8,7 @@
         <p>
           <ons-input id="textISBN" modifier="underbar" placeholder="ISBN" float></ons-input>
         </p>
+        <!-- Checkout Button -->
         <p style="margin-top: 30px;">
           <ons-button onclick="enterISBN()">Checkout</ons-button>
         </p>
@@ -15,6 +16,7 @@
     </div>
   </ons-card>
   
+  <!-- Barcode Scanner Element -->
   <ons-card>
     <div class="title">Scan Barcode</div>
     <div class="content" style="text-align:center">
@@ -22,6 +24,7 @@
     </div>
   </ons-card>
 
+  <!-- ISBN Confirmation -->
   <!-- <ons-button modifier="large" class="button-margin" onclick="enterISBN()" style="margin-top: 10px">Enter ISBN</ons-button> -->
   <ons-alert-dialog id="check">
     <div class="alert-dialog-title">Check ISBN</div>
@@ -34,6 +37,7 @@
     </div>
   </ons-alert-dialog>
 
+  <!-- Checkout Confirmation -->
   <ons-alert-dialog id="confirm">
     <div class="alert-dialog-title">Confirm</div>
     <div class="alert-dialog-content">

@@ -1,46 +1,42 @@
+<!-- Page Initialization -->
 <ons-page>
+  <!-- Navigation -->
   <ons-toolbar>
     <div class="left">
       <ons-back-button>Back</ons-back-button>
     </div>
     <div class="center">Help</div>
   </ons-toolbar>
+  <!-- Info Cards -->
   <ons-card>
-    <div class="title">What you can do with our app</div>
-    <div class="content">With our app you can reserve books, checkoutbooks, see a map of the school library, and you
-      will see reminders on when your books are overdue.</div>
+    <div class="title">Our App</div>
+    <div class="content">With our app users can reserve, checkout, and browse through books, see a map of their school library, and see reminders of when books are due soon, overdue, or when fines are due.</div>
   </ons-card>
   <ons-card>
-    <div class="title">How to reserve books</div>
-    <div class="content">In order to reserve book, all you must do
-    is simply search for the book you would like to reserve with the search bar at the top, and
-    then just press the reserve button. You will then have reserved the book for 2 weeks.
+    <div class="title">Reserve Books</div>
+    <div class="content">To reserve book, all the user must do is search for the book they would like to reserve either by searching it up, or locating it in the catalog. To place a hold, the user must simply press the reserve button when it is shown. The user will then have placed a hold on the book, which they will be reminded about when that hold is ready for pickup.
     </div>
   </ons-card>
   <ons-card>
-    <div class="title">How to checkout a book</div>
-    <div class="content">If you wish to checkout a book, you must have the physical copy that you would like to check out.
-    Once you have the physical copy, all you have to do is scan the barcode and follow the
-    instructions that follow. If you are unable to scan the book then you can also enter in the isbn of the book you would like to check out.
-    You will have checked out your book for 2 weeks.
+    <div class="title">Checkout</div>
+    <div class="content">
+    To checkout a book, users must have the physical copy that they would like to check out (obtained by visiting the library). Once the user has the physical copy, they can scan the barcode on the back and follow the instructions on the checkout page. If users are unable to scan the book then they can also enter the ISBN (also found on the back of the book) of the book to be checked out. All books are checked out to the user for 2 weeks.
     </div>
   </ons-card>
   <ons-card>
-    <div class="title">How to see the map</div>
-    <div class="content">In order to see the school library map, simply navigate to the map page using the toolbar at the bottom.
+    <div class="title">Map</div>
+    <div class="content">To view the map of user's school's library, navigate to the map page using the toolbar at the bottom of the app.
     </div>
   </ons-card>
   <ons-card>
-    <div class="title">How to see reminders</div>
-    <div class="content">You can see a variety of reminders on the MyLib page.
+    <div class="title">Reminders</div>
+    <div class="content">Personalized reminders can be found on the MyLib page.
     </div>
   </ons-card>
   <ons-card>
-    <div class="title">What the administrator can do</div>
-    <div class="content">The administrator will be the one who can change the books that are available, manage returns, manage accounts,
-      and change the school map. In order to do this, all the administrator must do is log into Firebase (the backend system that we are using)
-      and from there they can make all those changes and more. It is also very easy to use because it
-      has a simple and intuitive user interface.
+    <div class="title">Administrator Privileges</div>
+    <div class="content">
+      Administrators are able to edit books in the database, manage returns, accounts, and change the school associated with different users (which updates their map etc.). In order to do this, administrators log into Google Firebase (SmartLib's backend service) and make all changes from there. Firebase is very easy to use as it has a simple and intuitive user interface.
       </div>
   </ons-card>
 </ons-page>

@@ -1,3 +1,4 @@
+// Get books from backend (Firebase)
 function getAllBooks() {
   var i = 0;
   firebase.database().ref('list').once('value', function(snapshot) {
@@ -12,6 +13,7 @@ function getAllBooks() {
   });
 }
 
+// Add cover to book
 function addImage(type, i) {
   var storageRef = storage.ref();
   storageRef.child('/BookCovers/' + i + '.jpg').getDownloadURL().then(function(url) {
