@@ -38,7 +38,7 @@ When you first open the app you come to the login page which allows for auto log
 
 | Android       | IOS           |
 | ------------- |:-------------:|
-| <img style="width: 100px" src="https://firebasestorage.googleapis.com/v0/b/libraryapp-backend.appspot.com/o/ScreenshotsAndPics%2FScreenshot_20180430-122120.png?alt=media&token=d3e8f66c-3bea-4efc-b051-dffe5735d136">      | right-aligned |
+| <img style="width: 100px" src="https://firebasestorage.googleapis.com/v0/b/libraryapp-backend.appspot.com/o/ScreenshotsAndPics%2F20181.jpg?alt=media&token=9da9aeaf-1dcf-4ee7-9f2a-cc68c1b1c99a">      | right-aligned |
 | <img style="width: 100px" src="https://firebasestorage.googleapis.com/v0/b/libraryapp-backend.appspot.com/o/ScreenshotsAndPics%2FScreenshot_20180430-122128.png?alt=media&token=156bc651-ab70-4cb7-8a7c-c3d2c930a2ee">      | centered      |
 
 MyLib is like the home page of the app and on this page you are able to view reminders and see popular books. From here you can even see upcoming events that the library is hosting.
