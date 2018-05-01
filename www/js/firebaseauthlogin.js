@@ -14,6 +14,7 @@ function registerMonacaPushHandler() {
 }
 
 registerMonacaPushHandler();
+// now
 
 // Define AuthUI element
 var ui = new firebaseui.auth.AuthUI(firebase.auth());
