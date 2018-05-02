@@ -87,8 +87,8 @@ The map page offers a nice layout for the map. The administrator can also change
 
 | Android       | IOS           |
 | ------------- |:-------------:|
-| <img width="250" src="https://firebasestorage.googleapis.com/v0/b/libraryapp-backend.appspot.com/o/ScreenshotsAndPics%2FScreenshot_20180430-122228.png?alt=media&token=8248d451-29dd-4855-a50a-497164762b7b"> | <img width="250" src="https://firebasestorage.googleapis.com/v0/b/libraryapp-backend.appspot.com/o/ScreenshotsAndPics%2FScreenshot_20180430-122236.png?alt=media&token=47a7d93c-0f30-4424-ac9b-ad82738e4628">      | 
-| <img width="250" src="https://firebasestorage.googleapis.com/v0/b/libraryapp-backend.appspot.com/o/ScreenshotsAndPics%2FScreenshot_20180430-122236.png?alt=media&token=47a7d93c-0f30-4424-ac9b-ad82738e4628">      |  <img width="250" src="https://firebasestorage.googleapis.com/v0/b/libraryapp-backend.appspot.com/o/ScreenshotsAndPics%2FScreenshot_20180430-122244.png?alt=media&token=c031ff21-6065-4850-b1fa-313d6deb7416">
+| <img width="250" src="https://firebasestorage.googleapis.com/v0/b/libraryapp-backend.appspot.com/o/ScreenshotsAndPics%2FScreenshot_20180430-122228.png?alt=media&token=8248d451-29dd-4855-a50a-497164762b7b"> | <img width="250" src="https://firebasestorage.googleapis.com/v0/b/libraryapp-backend.appspot.com/o/ScreenshotsAndPics%2Fios_settings.jpg?alt=media&token=23e842b4-76a4-4a61-b824-26481235467b">      | 
+| <img width="250" src="https://firebasestorage.googleapis.com/v0/b/libraryapp-backend.appspot.com/o/ScreenshotsAndPics%2FScreenshot_20180430-122244.png?alt=media&token=c031ff21-6065-4850-b1fa-313d6deb7416">      | <img width="250" src="https://firebasestorage.googleapis.com/v0/b/libraryapp-backend.appspot.com/o/ScreenshotsAndPics%2Fios_bug_report.jpg?alt=media&token=ce38c4ad-c079-4a4a-9d52-76e177989eb8">
 
 This page is opened by opening the side menu and it allows you to get help, view about, submit bug reports, logout, and share the app.
 
