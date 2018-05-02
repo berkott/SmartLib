@@ -9,12 +9,10 @@ function receiveNotificationMessage(data) {
   logMsg("RECEIVED NOTIFICATION " + data);
 }
 
-function registerMonacaPushHandler() {
-  monaca.cloud().Push.setHandler(receiveNotificationMessage);
+function registerMonacaPushHandler() {  
+  monaca.cloud.Push.setHandler(receiveNotificationMessage);
+  logMsg("PushHandler set");
 }
-
-registerMonacaPushHandler();
-// now
 
 // Define AuthUI element
 var ui = new firebaseui.auth.AuthUI(firebase.auth());
@@ -41,8 +39,9 @@ firebase.auth().onAuthStateChanged(function(user) {
     }).then(function() {
       setTimeout(loadData, 1000);
       logMsg("Loading data");
-    }).catch(function() {
-      logMsg("Error: problem pushing page");
+      registerMonacaPushHandler();
+    }).catch(function(err) {
+      logMsg("Error: problem pushing page: "+err);
     });
   }
 });
