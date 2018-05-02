@@ -20,6 +20,27 @@ Develop an app to manage the issuance of books and to provide other information 
 - Title and Author Fuzzy Search
 - Backend in firebase for Total Control to the Library Adminsitrator
 
+
+## How to Download
+
+All releases are on the releases page https://github.com/shiv213/SmartLib/releases.
+
+### Android
+
+1. On your phone, go to Menu > Settings > Security > and check Unknown Sources to allow your phone to install apps from sources other than the Google Play Store.
+2. Download the apk onto your device from the release page.
+3. If you downloaded the apk onto your computer just simple email it to yourself and open it on your phone.
+4. Simply install the apk and open it.
+
+### iOS
+**_Note:_ You must have Xcode installed on your computer.**
+
+1. Dowload the .zip file from the release page.
+2. Unzip the files into a directory of your choice.
+3. Open the same directory as above with Xcode.
+4. Simply build the project on Xcode and run it.
+
+
 ## Pages
 
 Below is a quick explanation of all the pages with screen shots of what they can do
@@ -92,27 +113,7 @@ The map page offers a nice layout for the map. The administrator can also change
 
 This page is opened by opening the side menu and it allows you to get help, view about, submit bug reports, logout, and share the app.
 
-## How to Download
-
-All releases are on the releases page https://github.com/shiv213/SmartLib/releases.
-
-### Android
-
-1. On your phone, go to Menu > Settings > Security > and check Unknown Sources to allow your phone to install apps from sources other than the Google Play Store.
-2. Download the apk onto your device from the release page.
-3. If you downloaded the apk onto your computer just simple email it to yourself and open it on your phone.
-4. Simply install the apk and open it.
-
-### iOS
-**_Note:_ You must have Xcode installed on your computer.**
-
-1. Dowload the .zip file from the release page.
-2. Unzip the files into a directory of your choice.
-3. Open the same directory as above with Xcode.
-4. Simply build the project on Xcode and run it.
-
-
-### Services and Libraries Used
+## Services and Libraries Used
 - Google Firebase
 - OnsenUI
 - Monaca
