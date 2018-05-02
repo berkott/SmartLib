@@ -5,15 +5,6 @@ function loadData() {
   getAllBooks();
 }
 
-function receiveNotificationMessage(data) {
-  logMsg("RECEIVED NOTIFICATION " + data);
-}
-
-function registerMonacaPushHandler() {  
-  monaca.cloud.Push.setHandler(receiveNotificationMessage);
-  logMsg("PushHandler set");
-}
-
 // Define AuthUI element
 var ui = new firebaseui.auth.AuthUI(firebase.auth());
 var uiConfig = {
@@ -39,7 +30,6 @@ firebase.auth().onAuthStateChanged(function(user) {
     }).then(function() {
       setTimeout(loadData, 1000);
       logMsg("Loading data");
-      registerMonacaPushHandler();
     }).catch(function(err) {
       logMsg("Error: problem pushing page: "+err);
     });
