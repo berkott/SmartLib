@@ -29,7 +29,7 @@ Video demo of reserving and checking out a book: https://firebasestorage.googlea
 
 | Android       | IOS           |
 | ------------- |:-------------:|
-| <img width="250" src="https://firebasestorage.googleapis.com/v0/b/libraryapp-backend.appspot.com/o/ScreenshotsAndPics%2FScreenshot_20180430-122046.png?alt=media&token=0fe5b5e1-3fa5-481b-aae0-789dc4d0909f"> | <img width="250" src="https://firebasestorage.googleapis.com/v0/b/libraryapp-backend.appspot.com/o/ScreenshotsAndPics%2FScreenshot_20180430-122107.png?alt=media&token=715f1c5b-fc3c-453a-adbb-71c341c474c0"> |
+| <img width="250" src="https://firebasestorage.googleapis.com/v0/b/libraryapp-backend.appspot.com/o/ScreenshotsAndPics%2FScreenshot_20180430-122046.png?alt=media&token=0fe5b5e1-3fa5-481b-aae0-789dc4d0909f"> | <img width="250" src="https://firebasestorage.googleapis.com/v0/b/libraryapp-backend.appspot.com/o/ScreenshotsAndPics%2Fios_login.jpg?alt=media&token=6e6125ac-66cc-4914-8241-eeebd240870a"> |
 
 When you first open the app you come to the login page which allows for auto login once you are logged in on a device once.
 
@@ -37,7 +37,7 @@ When you first open the app you come to the login page which allows for auto log
 
 | Android       | IOS           |
 | ------------- |:-------------:|
-| <img width="250" src="https://firebasestorage.googleapis.com/v0/b/libraryapp-backend.appspot.com/o/ScreenshotsAndPics%2F20181.jpg?alt=media&token=9da9aeaf-1dcf-4ee7-9f2a-cc68c1b1c99a"> | <img width="250" src="https://firebasestorage.googleapis.com/v0/b/libraryapp-backend.appspot.com/o/ScreenshotsAndPics%2FScreenshot_20180430-122128.png?alt=media&token=156bc651-ab70-4cb7-8a7c-c3d2c930a2ee"> |
+| <img width="250" src="https://firebasestorage.googleapis.com/v0/b/libraryapp-backend.appspot.com/o/ScreenshotsAndPics%2FScreenshot_20180430-122120.png?alt=media&token=d3e8f66c-3bea-4efc-b051-dffe5735d136"> | <img width="250" src="https://firebasestorage.googleapis.com/v0/b/libraryapp-backend.appspot.com/o/ScreenshotsAndPics%2Fios_mylib_popular.jpg?alt=media&token=ba7fb328-8b97-4dfc-bd65-73c2cb6ca294"> |
 
 MyLib is like the home page of the app and on this page you are able to view reminders and see popular books. From here you can even see upcoming events that the library is hosting.
 
@@ -45,7 +45,7 @@ MyLib is like the home page of the app and on this page you are able to view rem
 
 | Android       | IOS           |
 | ------------- |:-------------:|
-| <img width="250" src="https://firebasestorage.googleapis.com/v0/b/libraryapp-backend.appspot.com/o/ScreenshotsAndPics%2FScreenshot_20180430-122155.png?alt=media&token=c102a1f1-5c48-4965-8a86-943bd4d78b41">      | right-aligned |
+| <img width="250" src="https://firebasestorage.googleapis.com/v0/b/libraryapp-backend.appspot.com/o/ScreenshotsAndPics%2FScreenshot_20180430-122155.png?alt=media&token=c102a1f1-5c48-4965-8a86-943bd4d78b41">      | <img width="250" src="https://firebasestorage.googleapis.com/v0/b/libraryapp-backend.appspot.com/o/ScreenshotsAndPics%2Fios_mylib_popular.jpg?alt=media&token=ba7fb328-8b97-4dfc-bd65-73c2cb6ca294"> |
 
 
 On the catalog page you are able to view all books currently available in your library.
@@ -54,7 +54,7 @@ On the catalog page you are able to view all books currently available in your l
 
 | Android       | IOS           |
 | ------------- |:-------------:|
-| <img width="250" src="https://firebasestorage.googleapis.com/v0/b/libraryapp-backend.appspot.com/o/ScreenshotsAndPics%2FScreenshot_20180430-122205.png?alt=media&token=f595786f-4886-41a4-9fd9-d56d7d5b6728">      | right-aligned |
+| <img width="250" src="https://firebasestorage.googleapis.com/v0/b/libraryapp-backend.appspot.com/o/ScreenshotsAndPics%2FScreenshot_20180430-122205.png?alt=media&token=f595786f-4886-41a4-9fd9-d56d7d5b6728">      | <img width="250" src="https://firebasestorage.googleapis.com/v0/b/libraryapp-backend.appspot.com/o/ScreenshotsAndPics%2Fios_search.jpg?alt=media&token=cc8b1587-f357-44df-bfdd-db40c83899f1"> |
 
 
 The search page is the page that is opened once you conduct a search using the search bar at the top of the app.
@@ -63,7 +63,7 @@ The search page is the page that is opened once you conduct a search using the s
 
 | Android       | IOS           |
 | ------------- |:-------------:|
-| <img width="250" src="https://firebasestorage.googleapis.com/v0/b/libraryapp-backend.appspot.com/o/ScreenshotsAndPics%2FScreenshot_20180430-122132.png?alt=media&token=3dd3fd6b-218c-4236-a707-913e4cc560a1">      | right-aligned |
+| <img width="250" src="https://firebasestorage.googleapis.com/v0/b/libraryapp-backend.appspot.com/o/ScreenshotsAndPics%2FScreenshot_20180430-122132.png?alt=media&token=3dd3fd6b-218c-4236-a707-913e4cc560a1">      | <img width="250" src="https://firebasestorage.googleapis.com/v0/b/libraryapp-backend.appspot.com/o/ScreenshotsAndPics%2Fios_search_book.jpg?alt=media&token=b55db69d-e547-4b46-af3b-6e55babc25fd"> |
 
 This is the page you are directed to when you press the view button for a book.
 
@@ -71,7 +71,7 @@ This is the page you are directed to when you press the view button for a book.
 
 | Android       | IOS           |
 | ------------- |:-------------:|
-| <img width="250" src="https://firebasestorage.googleapis.com/v0/b/libraryapp-backend.appspot.com/o/ScreenshotsAndPics%2FScreenshot_20180430-122221.png?alt=media&token=1f831465-0f21-4b9c-aac0-04babb6eb5f8">      | right-aligned |
+| <img width="250" src="https://firebasestorage.googleapis.com/v0/b/libraryapp-backend.appspot.com/o/ScreenshotsAndPics%2FScreenshot_20180430-122221.png?alt=media&token=1f831465-0f21-4b9c-aac0-04babb6eb5f8">      | <img width="250" src="https://firebasestorage.googleapis.com/v0/b/libraryapp-backend.appspot.com/o/ScreenshotsAndPics%2Fios_checkout.jpg?alt=media&token=75aa1b1e-41df-4d85-a6b9-6cba42c026c1"> |
 
 Once you navigate to the checkout page you can checkout books by either typing in the ISBN or by scanning the book's ISBN.
 
@@ -79,7 +79,7 @@ Once you navigate to the checkout page you can checkout books by either typing i
 
 | Android       | IOS           |
 | ------------- |:-------------:|
-| <img width="250" src="https://firebasestorage.googleapis.com/v0/b/libraryapp-backend.appspot.com/o/ScreenshotsAndPics%2FScreenshot_20180430-122225.png?alt=media&token=0f5c31af-6ede-4a45-8eff-f4f43ab9eb98">      | right-aligned |
+| <img width="250" src="https://firebasestorage.googleapis.com/v0/b/libraryapp-backend.appspot.com/o/ScreenshotsAndPics%2FScreenshot_20180430-122225.png?alt=media&token=0f5c31af-6ede-4a45-8eff-f4f43ab9eb98">      | <img width="250" src="https://firebasestorage.googleapis.com/v0/b/libraryapp-backend.appspot.com/o/ScreenshotsAndPics%2Fios_map.jpg?alt=media&token=3a8d4c17-5ec3-4459-93ee-27872d7a5bb1"> |
 
 The map page offers a nice layout for the map. The administrator can also change the map in the backend allowing for operability with different libraries.
 
@@ -93,9 +93,24 @@ The map page offers a nice layout for the map. The administrator can also change
 This page is opened by opening the side menu and it allows you to get help, view about, submit bug reports, logout, and share the app.
 
 ## How to Download
-1. Navigate to the Releases page: https://github.com/shiv213/SmartLib/releases.
-2. Download the latest appropriate release for your device.
-3. Load download to your device.
+
+All releases are on the releases page https://github.com/shiv213/SmartLib/releases.
+
+### Android
+
+1. On your phone, go to Menu > Settings > Security > and check Unknown Sources to allow your phone to install apps from sources other than the Google Play Store.
+2. Download the apk onto your device from the release page.
+3. If you downloaded the apk onto your computer just simple email it to yourself and open it on your phone.
+4. Simply install the apk and open it.
+
+### iOS
+**_Note:_ You must have Xcode installed on your computer.**
+
+1. Dowload the .zip file from the release page.
+2. Unzip the files into a directory of your choice.
+3. Open the same directory as above with Xcode.
+4. Simply build the project on Xcode and run it.
+
 
 ### Services and Libraries Used
 - Google Firebase
