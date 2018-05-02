@@ -23,7 +23,7 @@ Develop an app to manage the issuance of books and to provide other information 
 
 ## How to Download
 
-All releases are on the releases page https://github.com/shiv213/SmartLib/releases.
+All releases are on the releases page https://github.com/berkott/SmartLib/releases.
 
 ### Android
 
