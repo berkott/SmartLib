@@ -40,6 +40,9 @@ All releases are on the releases page https://github.com/berkott/SmartLib/releas
 3. Open the same directory as above with Xcode.
 4. Simply build the project on Xcode and run it.
 
+### After Download
+Once you have downloaded SmartLib just simply make an account by entering your email and a password of your choice and you are ready to begin using SmartLib!
+
 
 ## Pages
 
@@ -113,15 +116,28 @@ The map page offers a nice layout for the map. The administrator can also change
 
 This page is opened by opening the side menu and it allows you to get help, view about, submit bug reports, logout, and share the app.
 
-## Services and Libraries Used
+## Software Used
 - Google Firebase
 - OnsenUI
 - Monaca
 - FuseJS
 - jQuery
 
+### Sources of Information
+- https://firebase.google.com/docs/
+- https://docs.monaca.io/en/
+- https://onsen.io/v2/api/js/
+- http://fusejs.io/
+- https://api.jquery.com/
+
+### Templates used
+- https://onsen.io/playground/?framework=vanilla&category=common%20patterns&module=kitchensink
+
 ## Social Media
 @SmartLibNHS
 - https://twitter.com/SmartLibNHS
 - https://fb.me/SmartLibNHS
 - https://www.instagram.com/smartlibnhs/
+
+
+Copyright (c) 2018, Northview FBLA.
